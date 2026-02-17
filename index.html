@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Siza A. — Digital Storyteller & Creator</title>
+    <meta name="description" content="A quiet corner on the internet for coffee rituals, digital journaling, and creative storytelling.">
+    <meta name="keywords" content="portfolio, journaling, slow living, creativity, digital products">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Your Name — Digital Storyteller">
+    <meta property="og:description" content="A quiet corner on the internet for coffee rituals and creative storytelling.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Si-za1">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" aria-label="Home">
+                <span class="logo-text"> Siza A. </span>
+            </a>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#working-on" class="nav-link" data-section="working-on">Working On</a></li>
+                    <li><a href="#products" class="nav-link" data-section="products">Products</a></li>
+                    <li><a href="#experience" class="nav-link" data-section="experience">Journey</a></li>
+                    <li><a href="#setup" class="nav-link" data-section="setup">Setup</a></li>
+                    <li><a href="#support" class="nav-link" data-section="support">Support</a></li>
+                </ul>
+                
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon light">☀️</span>
+                    <span class="theme-icon dark">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-container">
+                <div class="hero-content fade-in-up">
+                    <p class="hero-greeting">Welcome to my corner</p>
+                    <h1 class="hero-title">
+                        I'm <span class="highlight">Siza A.</span>,<br>
+                        a digital storyteller<br>
+                        & creative soul.
+                    </h1>
+                    <p class="hero-tagline">
+                        Brewing ideas one cup at a time. Documenting the journey 
+                        between coffee rituals, digital journaling, and the art 
+                        of slow, and intentional creation.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#about" class="btn btn-primary">Explore</a>
+                        <a href="#products" class="btn btn-secondary">My Products</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual fade-in-up delay-2">
+                    <!-- Hand-drawn style illustration using SVG -->
+                    <svg class="hero-illustration" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Coffee cup -->
+                        <path class="draw-path" d="M120 180 Q120 220 160 220 L200 220 Q240 220 240 180 L240 140 L120 140 Z" 
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <!-- Cup handle -->
+                        <path class="draw-path" d="M240 160 Q270 160 270 180 Q270 200 240 200" 
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <!-- Steam -->
+                        <path class="draw-path steam" d="M150 120 Q160 100 150 80 Q140 60 150 40" 
+                              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                        <path class="draw-path steam delay-1" d="M180 130 Q190 110 180 90 Q170 70 180 50" 
+                              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                        <path class="draw-path steam delay-2" d="M210 120 Q220 100 210 80 Q200 60 210 40" 
+                              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Laptop/tablet -->
+                        <rect x="100" y="200" width="200" height="8" rx="4" fill="currentColor" opacity="0.8"/>
+                        <rect x="110" y="120" width="180" height="80" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <!-- Plant -->
+                        <path class="draw-path" d="M320 220 L320 180" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <ellipse cx="320" cy="170" rx="15" ry="25" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <ellipse cx="305" cy="180" rx="12" ry="20" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(-30 305 180)"/>
+                        <ellipse cx="335" cy="175" rx="12" ry="20" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(30 335 175)"/>
+                        <!-- Pot -->
+                        <path d="M305 220 L310 240 L330 240 L335 220 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll gently</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text fade-in-up">
+                        <div class="about-block">
+                            <h3>Who I Am</h3>
+                            <!-- EDIT: Replace this text with your personal story -->
+                            <p>
+                                I'm someone who finds beauty in the in-between moments like 
+                                the steam rising from a morning pour-over, the way afternoon 
+                                light hits my journal pages, the quiet satisfaction of 
+                                creating something meaningful.
+                            </p>
+                            <p>
+                                By day, I navigate the digital world. By heart, I'm a 
+                                documenter of small joys and slow living advocate.
+                            </p>
+                        </div>
+                        
+                        <div class="about-block">
+                            <h3>What I Love</h3>
+                            <!-- EDIT: Customize your interests -->
+                            <p>
+                                Analog rituals in a digital age. The weight of a good pen. 
+                                The smell of freshly ground coffee. The meditative process 
+                                of arranging thoughts into words. Creating digital spaces 
+                                that feel warm, human, and intentional.
+                            </p>
+                        </div>
+                        
+                        <div class="about-block">
+                            <h3>Why I Create</h3>
+                            <!-- EDIT: Your creative philosophy -->
+                            <p>
+                                I believe the internet needs more quiet corners and spaces 
+                                that feel like a deep breath rather than a shout. I create 
+                                to document my journey, share what I learn, and hopefully 
+                                inspire others to embrace their own creative rhythm.
+                            </p>
+                        </div>
+                        
+                        <div class="about-block coffee-journey">
+                            <h3>☕ My Coffee Journey</h3>
+                            <!-- EDIT: Your coffee story -->
+                            <p>
+                                It started with instant coffee since childhood, evolved 
+                                through a French press phase, and now I'm deep in the 
+                                rabbit hole of pour-overs and single origins. Each cup 
+                                is a small ceremony and a moment for a pause; grinding beans, watching the bloom, 
+                                waiting for that first sip. Coffee is my creative ritual.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual fade-in-up delay-1">
+                        <div class="journal-page">
+                            <div class="journal-lines">
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line"></div>
+                                <div class="journal-line short"></div>
+                            </div>
+                            <div class="coffee-stain"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What I'm Working On -->
+        <section class="section working-on" id="working-on">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">What I'm Working On</h2>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- EDIT: Add/remove/modify project cards -->
+                    
+                    <article class="project-card fade-in-up">
+                        <div class="project-header">
+                            <span class="project-status status-building">building</span>
+                        </div>
+                        <h3 class="project-title">Digital Garden</h3>
+                        <p class="project-description">
+                            A personal knowledge base built with intention. 
+                            Growing ideas slowly, connecting thoughts organically.
+                        </p>
+                        <a href="#" class="project-link" target="_blank" rel="noopener">
+                            Follow along →
+                        </a>
+                    </article>
+                    
+                    <article class="project-card fade-in-up delay-1">
+                        <div class="project-header">
+                            <span class="project-status status-experimenting">experimenting</span>
+                        </div>
+                        <h3 class="project-title">Euonia - here gently, </h3>
+                        <p class="project-description">
+                            A distraction free writing space for daily morning pages. 
+                            Minimal, warm, encouraging.
+                        </p>
+                        <a href="#" class="project-link" target="_blank" rel="noopener">
+                            Early access →
+                        </a>
+                    </article>
+                    
+                    <article class="project-card fade-in-up delay-2">
+                        <div class="project-header">
+                            <span class="project-status status-released">released</span>
+                        </div>
+                        <h3 class="project-title">Slow Living 3 days </h3>
+                        <p class="project-description">
+                            A 3 days promise to enjoy intentional living, 
+                            and finding joy in simplicity.
+                        </p>
+                        <a href="#" class="project-link" target="_blank" rel="noopener">
+                            Read the zine →
+                        </a>
+                    </article>
+                    
+                    <article class="project-card fade-in-up">
+                        <div class="project-header">
+                            <span class="project-status status-building"> Projected </span>
+                        </div>
+                        <h3 class="project-title">with coffee, figuring it out </h3>
+                        <p class="project-description">
+                             A personal archive of thoughts, process, and small joys shared with a coffee, and with no pressure of figuring it out yet.
+                        </p>
+                        <a href="https://www.youtube.com/@withcoffeefiguringitout" class="project-link" target="https://www.youtube.com/@withcoffeefiguringitout" rel="noopener">
+                            Subscribe for more →
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Products -->
+        <section class="section products" id="products">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">Digital Products</h2>
+                    <p class="section-subtitle">Tools for your creative journey</p>
+                </div>
+                
+                <div class="products-grid">
+                    <!-- EDIT: Modify product cards with your actual products -->
+                    
+                    <article class="product-card fade-in-up">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <span>Notion Template</span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">The Slow Creator's Dashboard</h3>
+                            <p class="product-description">
+                                A minimalist Notion workspace for managing creative 
+                                projects without overwhelm.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">$coming soon</span>
+                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="product-card fade-in-up delay-1">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <span>E-Book</span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Digital Journaling 101</h3>
+                            <p class="product-description">
+                                A gentle guide to starting and maintaining a digital 
+                                journaling practice. 50+ pages of insights.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">$coming soon</span>
+                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">
+                                    Get It
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="product-card fade-in-up delay-2">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <span>Wallpapers</span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Cozy Desktop Collection</h3>
+                            <p class="product-description">
+                                10 hand-illustrated wallpapers inspired by coffee 
+                                shops, journals, and quiet moments.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">$$coming soon</span>
+                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">
+                                    View Collection
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="product-card fade-in-up">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <span>Template Pack</span>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Instagram Story Templates</h3>
+                            <p class="product-description">
+                                20 aesthetic story templates for sharing your 
+                                creative process and daily moments.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">$coming soon</span>
+                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Skills -->
+        <section class="section experience" id="experience">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">My Journey</h2>
+                </div>
+                
+                <div class="timeline">
+                    <!-- EDIT: Customize timeline entries -->
+                    
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Learning</span>
+                            <h3>The Foundations</h3>
+                            <p>
+                                Self-taught through curiosity and countless YouTube 
+                                tutorials. Learned that the best way to understand 
+                                something is to build it. And implementing it through my professional experience.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Data Engineering</span>
+                                <span class="tag">AI</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">Prompt Engineering </span>
+                                <span class="tag">Design Principles</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Creating</span>
+                            <h3>First Digital Products</h3>
+                            <p>
+                                Transformed my personal systems into templates others 
+                                could use. Discovered the joy of creating tools that 
+                                help people.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Notion</span>
+                                <span class="tag">Product Design</span>
+                                <span class="tag">User Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Growing</span>
+                            <h3>Community & Connection</h3>
+                            <p>
+                                Started sharing my journey publicly. Learned that 
+                                vulnerability resonates more than perfection.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Content Creation</span>
+                                <span class="tag">Storytelling</span>
+                                <span class="tag">Community Building</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Exploring</span>
+                            <h3>Current Chapter</h3>
+                            <p>
+                                Diving deeper into creative coding, exploring the 
+                                intersection of technology and mindfulness.
+                            </p>
+                            <div class="timeline-tags">
+                                <span class="tag">Creative Coding</span>
+                                <span class="tag">Writing</span>
+                                <span class="tag">Digital Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skills -->
+                <div class="skills-section fade-in-up">
+                    <h3>Things I Work With</h3>
+                    <div class="skills-cloud">
+                        <!-- EDIT: Modify skills -->
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Prompt Engineering </span>
+                        <span class="skill-item">AI </span>
+                        <span class="skill-item">Canva </span>
+                        <span class="skill-item">Notion</span>
+                        <span class="skill-item">Writing</span>
+                        <span class="skill-item">Photography</span>
+                        <span class="skill-item">ScriptWriting</span>
+                        <span class="skill-item">Content Creation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Passion & Interests -->
+        <section class="section passions" id="passions">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">What Fills My Cup</h2>
+                </div>
+                
+                <div class="passions-grid">
+                    <!-- EDIT: Customize passion items -->
+                    
+                    <div class="passion-item fade-in-up">
+                        <div class="passion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                                <line x1="6" y1="1" x2="6" y2="4"/>
+                                <line x1="10" y1="1" x2="10" y2="4"/>
+                                <line x1="14" y1="1" x2="14" y2="4"/>
+                            </svg>
+                        </div>
+                        <h3>Coffee</h3>
+                        <p>Morning ritual, afternoon pause, and evening decaf</p>
+                    </div>
+                    
+                    <div class="passion-item fade-in-up delay-1">
+                        <div class="passion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <h3>Journaling</h3>
+                        <p>Processing thoughts, tracking growth, remembering</p>
+                    </div>
+                    
+                    <div class="passion-item fade-in-up delay-2">
+                        <div class="passion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                                <line x1="15" y1="9" x2="15.01" y2="9"/>
+                            </svg>
+                        </div>
+                        <h3>Storytelling</h3>
+                        <p>Finding narrative in everyday moments</p>
+                    </div>
+                    
+                    <div class="passion-item fade-in-up">
+                        <div class="passion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"/>
+                                <rect x="9" y="9" width="6" height="6"/>
+                                <line x1="9" y1="1" x2="9" y2="4"/>
+                                <line x1="15" y1="1" x2="15" y2="4"/>
+                                <line x1="9" y1="20" x2="9" y2="23"/>
+                                <line x1="15" y1="20" x2="15" y2="23"/>
+                                <line x1="20" y1="9" x2="23" y2="9"/>
+                                <line x1="20" y1="14" x2="23" y2="14"/>
+                                <line x1="1" y1="9" x2="4" y2="9"/>
+                                <line x1="1" y1="14" x2="4" y2="14"/>
+                            </svg>
+                        </div>
+                        <h3>Tech</h3>
+                        <p>Building digital tools with human warmth</p>
+                    </div>
+                    
+                    <div class="passion-item fade-in-up delay-1">
+                        <div class="passion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3>Aesthetics</h3>
+                        <p>Beauty in simplicity, harmony in design</p>
+                    </div>
+                    
+                    <div class="passion-item fade-in-up delay-2">
+                        <div class="passion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <h3>Slow Living</h3>
+                        <p>Intention over urgency, presence over productivity</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="section support" id="support">
+            <div class="container">
+                <div class="support-content fade-in-up">
+                    <div class="support-text">
+                        <span class="section-number">06</span>
+                        <h2>Support My Work</h2>
+                        <p>
+                            Creating these resources takes time, coffee, and a lot of heart. 
+                            If my work has added value to your life, consider supporting 
+                            my journey. Every contribution helps me continue creating 
+                            and sharing with this wonderful community.
+                        </p>
+                        <p class="support-thanks">
+                            Thank you for being here. ☕
+                        </p>
+                    </div>
+                    
+                    <div class="support-actions">
+                        <!-- EDIT: Replace # with your actual links -->
+                        <a href="https://buymemomo.com/meandmycoffeetales" class="support-btn btn-coffee" target="_blank" rel="noopener">
+                            <span class="support-icon">🥟</span>
+                            <span class="support-label">Buy me momo </span>
+                        </a>
+                        
+                        <a href="https://sizaa.gumroad.com/?section=aZz_uHxMvna7kWjn2aokrA%3D%3D" class="support-btn btn-wishlist" target="_blank" rel="noopener">
+                            <span class="support-icon">🎁</span>
+                            <span class="support-label">View my wishlist</span>
+                        </a>
+                        
+                        <!-- <a href="#" class="support-btn btn-donate" target="_blank" rel="noopener">
+                            <span class="support-icon">💝</span>
+                            <span class="support-label">Make a donation</span>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Setup -->
+        <section class="section setup" id="setup">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <span class="section-number">07</span>
+                    <h2 class="section-title">Things I Use</h2>
+                    <p class="section-subtitle">Tools that support my creative process</p>
+                </div>
+                
+                <div class="setup-grid">
+                    <!-- EDIT: Customize your gear list -->
+                    
+                    <div class="setup-category fade-in-up">
+                        <h3>Digital</h3>
+                        <ul class="setup-list">
+                            <li class="setup-item">
+                                <span class="setup-name">Macbook Air M1 </span>
+                                <span class="setup-desc">For my daily work and creativity </span>
+                                <!-- EDIT: Add your affiliate link -->
+                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a> -->
+                            </li>
+                            <li class="setup-item">
+                                <span class="setup-name">Notion</span>
+                                <span class="setup-desc">My digital hub</span>
+                                <a href="#" class="setup-link" target="_blank" rel="noopener">Try free →</a>
+                            </li>
+                            <li class="setup-item">
+                                <span class="setup-name">Canva</span>
+                                <span class="setup-desc">Digital illustration & designing </span>
+                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">App Store →</a> -->
+                            </li>
+                            <li class="setup-item">
+                                <span class="setup-name">GoodNotes</span>
+                                <span class="setup-desc">Handwritten notes & planning</span>
+                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">App Store →</a> -->
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="setup-category fade-in-up delay-1">
+                        <h3>Analog</h3>
+                        <ul class="setup-list">
+                            <li class="setup-item">
+                                <span class="setup-name">Notebook</span>
+                                <span class="setup-desc">A2 - for brainstorming moments </span>
+                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a> -->
+                            </li>
+                            <li class="setup-item">
+                                <span class="setup-name">Ballpoint pen</span>
+                                <span class="setup-desc">My everyday writing companion</span>
+                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a> -->
+                            </li>
+                            <li class="setup-item">
+                                <span class="setup-name">Current Read </span>
+                                <span class="setup-desc">Murakami, Kafka on the shore</span>
+                                <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a>
+                            </li>
+                            <li class="setup-item">
+                                <span class="setup-name">Desk lamp </span>
+                                <span class="setup-desc">For aesthetics </span>
+                                <!-- <a href="https://www.instagram.com/p/DUOE9rGE33g/?img_index=1" class="setup-link" target="_blank" rel="noopener">View →</a> -->
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="setup-category fade-in-up delay-2">
+                        <h3>Coffee</h3>
+                        <ul class="setup-list">
+                            <li class="setup-item">
+                                <span class="setup-name">V60 GLASS DRIPPER</span>
+                                <span class="setup-desc">Daily brewing ritual</span>
+                                <!-- <a href="https://thebrewinghouse.com/product/v60-glass-dripper/" class="setup-link" target="_blank" rel="noopener">View →</a> -->
+                            </li>
+                            <li class="setup-item">
+                                <span class="setup-name">French Press </span>
+                                <span class="setup-desc">Consistent, portable, beautiful</span>
+                                <!-- <a href="https://coffeeofpromise.com/product/french-press/" class="setup-link" target="_blank" rel="noopener">View →</a> -->
+                            </li>
+                            <li class="setup-item">
+                                <span class="setup-name">Coffee Filter from Vietnam</span>
+                                <span class="setup-desc">Aromatic brew and experience  </span>
+                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a> -->
+                            </li>
+                            <li class="setup-item">
+                                <span class="setup-name">Trung Nguyen</span>
+                                <span class="setup-desc"> Gourmet Blend</span>
+                                <!-- <a href="https://trungnguyen.eu/collections/ground-coffee/products/gourmet-blend?variant=18132523810934" class="setup-link" target="_blank" rel="noopener">View →</a> -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Links -->
+        <section class="section social" id="social">
+            <div class="container">
+                <div class="social-content fade-in-up">
+                    <h2>Let's Connect</h2>
+                    <p>Find me sharing thoughts, process, and small joys</p>
+                    
+                    <div class="social-links">
+                        <!-- EDIT: Replace # with your actual social links -->
+                        <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        
+                        <a href="https://www.youtube.com/@withcoffeefiguringitout" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                            </svg>
+                            <span>YouTube</span>
+                        </a>
+                        
+                        <!-- <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="Pinterest">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <line x1="12" y1="8" x2="12" y2="21"/>
+                                <path d="M6 12a6 6 0 0 1 12 0c0 3-1.5 5-3 6.5"/>
+                                <circle cx="12" cy="12" r="9"/>
+                            </svg>
+                            <span>Pinterest</span>
+                        </a> -->
+                        
+                        <a href="https://sizaa.gumroad.com/?section=GKUhGsutJ4nKJTh2F849xA%3D%3D" class="social-link" target="_blank" rel="noopener" aria-label="Gumroad">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M6 6h15l-1.5 9h-12L6 6z"/>
+                                <circle cx="9" cy="20" r="1"/>
+                                <circle cx="18" cy="20" r="1"/>
+                                <path d="M6 6L5 3H2"/>
+                            </svg>
+                            <span>Gumroad</span>
+                        </a>
+                        
+                        <a href="mailto:meandmycoffeetales@gmail.com" class="social-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                Made with patience, coffee, and intention.<br>
+                Thank you for visiting my quiet corner of the internet. ☕
+            </p>
+            <p class="footer-year">© <span id="year"></span> Siza A. </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
