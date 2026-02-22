@@ -812,6 +812,216 @@ a:hover {
 }
 
 /* ============================================
+   PR & COLLABORATIONS SECTION
+   ============================================ */
+
+   .collaborations {
+    background-color: var(--color-bg-secondary);
+}
+
+/* Stats */
+.collab-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3xl);
+    margin-bottom: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 500;
+    color: var(--color-accent);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: var(--space-xs);
+}
+
+/* Brands */
+.collab-brands {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.brands-label {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+}
+
+.brands-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
+.brand-logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    opacity: 0.6;
+    transition: opacity var(--transition-fast);
+}
+
+.brand-logo:hover {
+    opacity: 1;
+}
+
+/* Collaboration Types */
+.collab-heading {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: var(--space-xl);
+    font-family: var(--font-serif);
+    font-weight: 500;
+}
+
+.collab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-3xl);
+}
+
+.collab-card {
+    background-color: var(--color-card);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+}
+
+.collab-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent-light);
+}
+
+.collab-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+}
+
+.collab-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+    font-family: var(--font-sans);
+    font-weight: 600;
+}
+
+.collab-card p {
+    font-size: 0.9375rem;
+    margin-bottom: var(--space-md);
+}
+
+.collab-list {
+    list-style: none;
+    padding: 0;
+}
+
+.collab-list li {
+    padding: var(--space-xs) 0;
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+}
+
+.collab-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+}
+
+/* Press Section */
+.press-section {
+    margin-bottom: var(--space-3xl);
+}
+
+.press-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.press-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    background-color: var(--color-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+}
+
+.press-item:hover {
+    border-color: var(--color-accent);
+    transform: translateX(4px);
+}
+
+.press-name {
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.press-topic {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* CTA */
+.collab-cta {
+    text-align: center;
+    padding: var(--space-2xl);
+    background-color: var(--color-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.collab-text {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+}
+
+.collab-media-kit {
+    display: block;
+    margin-top: var(--space-md);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.collab-media-kit:hover {
+    color: var(--color-accent);
+}
+
+/* ============================================
    EXPERIENCE / TIMELINE SECTION
    ============================================ */
 
