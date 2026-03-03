@@ -47,6 +47,7 @@
                 <ul class="nav-links">
                     <li><a href="#about" class="nav-link" data-section="about">About</a></li>
                     <li><a href="#working-on" class="nav-link" data-section="working-on">Working On</a></li>
+                    <li><a href="#newsletter" class="nav-link" data-section="newsletter">Waitlist</a></li>
                     <li><a href="#products" class="nav-link" data-section="products">Products</a></li>
                     <li><a href="#collaborations" class="nav-link" data-section="collaborations">Collabs</a></li>
                     <li><a href="#experience" class="nav-link" data-section="experience">Journey</a></li>
@@ -282,6 +283,41 @@
                 </div>
             </div>
         </section>
+                <!-- Email Newsletter Section -->
+                <section class="section newsletter" id="newsletter">
+                    <div class="container">
+                        <div class="newsletter-content fade-in-up">
+                            <div class="newsletter-text">
+                                <h2>Be the first to know</h2>
+                                <p>Get notified as soon as the products get soft launched!</p>
+                            </div>
+                            
+                            <form class="newsletter-form" action="https://formspree.io/f/xqedvvrk" method="POST">
+                                <div class="form-group">
+                                    <input 
+                                        type="email" 
+                                        name="email" 
+                                        placeholder="your@email.com" 
+                                        required
+                                        class="newsletter-input"
+                                        aria-label="Email address"
+                                    >
+                                    <button type="submit" class="btn btn-primary newsletter-btn">
+                                        Notify Me
+                                    </button>
+                                </div>
+                                <p class="form-note">No spam, just coffee & creativity. Unsubscribe anytime.</p>
+                            </form>
+                            
+                            <!-- Alternative: Simple mailto fallback -->
+                            <!-- 
+                            <a href="mailto:meandmycoffeetales@gmail.com?subject=Notify%20me%20when%20products%20launch&body=Please%20add%20me%20to%20your%20launch%20notification%20list." class="btn btn-primary">
+                                Join Waitlist →
+                            </a>
+                            -->
+                        </div>
+                    </div>
+                </section>
 
         <!-- Digital Products -->
         <section class="section products" id="products">
