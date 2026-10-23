@@ -3,961 +3,833 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Siza A. Digital Storyteller, Engineer & Creator</title>
-    <meta name="description" content="A quiet corner on the internet for coffee rituals, digital journaling, and creative storytelling.">
-    <meta name="keywords" content="portfolio, journaling, slow living, creativity, digital products">
-    <meta name="author" content="Siza A.">
-    <meta name="p:domain_verify" content="2ba873f0f84cdc18884524896293f8e1"/>
-    
+
+    <!-- SEO -->
+    <title>Cups &amp; Chapters: Coffee, Books &amp; Slow-Made Things</title>
+    <meta name="description" content="A quiet corner for coffee rituals, good books, slow making, and stories told honestly.">
+    <meta name="keywords" content="coffee, books, reading, journaling, slow living, data engineering, AI, digital products">
+    <meta name="theme-color" content="#F7F1E4">
+    <meta name="p:domain_verify" content="2ba873f0f84cdc18884524896293f8e1">
+    <script>
+        // Apply a saved theme before first paint to avoid a flash of light mode
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } catch (e) {}
+    </script>
+
     <!-- Open Graph -->
-    <meta property="og:title" content="Siza A. - Digital Storyteller, Engineer and Creator">
-    <meta property="og:description" content="A quiet corner on the internet for coffee rituals and creative storytelling.">
+    <meta property="og:title" content="Cups &amp; Chapters: Coffee, Books &amp; Slow-Made Things">
+    <meta property="og:description" content="A quiet corner for coffee rituals, good books, slow making, and stories told honestly.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.com/Si-za1">
-    
+    <meta property="og:url" content="https://www.sizaadhikari.com.np/">
+    <meta property="og:image" content="https://www.sizaadhikari.com.np/assets/images/persona-reading.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
-    
-    <!-- Google Fonts -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="assets/images/persona-reading.png">
+    <noscript><style>.fade-in-up{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
-    
-    <!-- Skip to main content for accessibility -->
+
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <!-- Navigation -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="#" class="nav-logo" aria-label="Home">
-                <span class="logo-text"> Siza A. </span>
+            <a href="#home" class="nav-logo" aria-label="Cups and Chapters, home">
+                <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+                    <path d="M5 13h15v7a6 6 0 0 1-6 6h-3a6 6 0 0 1-6-6v-7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="M20 15.5h2.2a3.5 3.5 0 0 1 0 7H20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    <path d="M8.5 9.5c1.2-1.4 1.2-2.8 0-4.2M13.5 9.5c1.2-1.4 1.2-2.8 0-4.2M18.5 9.5c1.2-1.4 1.2-2.8 0-4.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+                </svg>
+                <span class="logo-text">cups <em>&amp;</em> chapters</span>
             </a>
-            
-            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+
+            <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
                 <span class="hamburger"></span>
             </button>
-            
+
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-                    <li><a href="#working-on" class="nav-link" data-section="working-on">Working On</a></li>
-                    <li><a href="#newsletter" class="nav-link" data-section="newsletter">Waitlist</a></li>
-                    <li><a href="#products" class="nav-link" data-section="products">Products</a></li>
-                    <li><a href="#experience" class="nav-link" data-section="experience">Journey</a></li>
-                    <li><a href="#collaborations" class="nav-link" data-section="collaborations">Collabs</a></li>
-                    <li><a href="#support" class="nav-link" data-section="support">Support</a></li>
-                    <li><a href="#setup" class="nav-link" data-section="setup">Setup</a></li>
+                    <li><a href="#corners" class="nav-link" data-section="corners">Corners</a></li>
+                    <li><a href="#setup" class="nav-link" data-section="setup">Things</a></li>
+                    <li><a href="#journey" class="nav-link" data-section="journey">Journey</a></li>
+                    <li><a href="#collaborate" class="nav-link" data-section="collaborate">Collabs</a></li>
+                    <li><a href="#hello" class="nav-link" data-section="hello">Hello</a></li>
                 </ul>
-                
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="theme-icon light">☀️</span>
-                    <span class="theme-icon dark">🌙</span>
+
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <svg class="theme-icon moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="theme-icon sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main id="main-content">
-        
-        <!-- Hero Section -->
+    <main id="main-content" tabindex="-1">
+
+        <!-- Hero -->
         <section class="hero" id="home">
-            <div class="hero-container">
-                <div class="hero-content fade-in-up">
-                    <p class="hero-greeting">Welcome to my corner</p>
-                    <h1 class="hero-title">
-                        I'm <span class="highlight">Siza A.</span>,<br>
-                        a digital storyteller,<br>
-                        an engineer & a creative soul.
+            <div class="hero-min">
+                <div class="hero-center">
+                    <p class="hero-hello fade-in-up">Hello, fellow book wanderer and coffee dreamer. <span aria-hidden="true">☕📚</span></p>
+
+                    <h1 class="hero-title fade-in-up delay-1">
+                        Welcome to my little corner of the internet, where stories never really end
+                        and there’s always time for <span class="scribble">one more cup of coffee</span>.
+                        <span class="heart" aria-hidden="true">♡</span>
                     </h1>
-                    <p class="hero-tagline">
-                        Brewing ideas one cup at a time. Documenting the journey 
-                        between coffee rituals, Data and  Ai engineering,  digital journaling, and the art 
-                        of slow, and intentional creation.
+
+                    <p class="hero-lede fade-in-up delay-2">
+                        If you’ve ever wished you could live inside the pages of a book,
+                        romanticize a slow morning, or make a little moment last forever,
+                        I think you’ll feel at home here.
                     </p>
-                    <div class="hero-actions">
-                        <a href="#about" class="btn btn-primary">Explore</a>
-                        <a href="#working-on" class="btn btn-secondary">
-                            What I'm Building
-                        </a>
-                    </div>
+
+                    <a href="#about" class="hero-pill fade-in-up delay-2">my story <span aria-hidden="true">→</span></a>
                 </div>
-                
-                <div class="hero-visual fade-in-up delay-2">
-                    <!-- Hand-drawn style illustration using SVG -->
-                    <svg class="hero-illustration" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Coffee cup -->
-                        <path class="draw-path" d="M120 180 Q120 220 160 220 L200 220 Q240 220 240 180 L240 140 L120 140 Z" 
-                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <!-- Cup handle -->
-                        <path class="draw-path" d="M240 160 Q270 160 270 180 Q270 200 240 200" 
-                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        <!-- Steam -->
-                        <path class="draw-path steam" d="M150 120 Q160 100 150 80 Q140 60 150 40" 
-                              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                        <path class="draw-path steam delay-1" d="M180 130 Q190 110 180 90 Q170 70 180 50" 
-                              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                        <path class="draw-path steam delay-2" d="M210 120 Q220 100 210 80 Q200 60 210 40" 
-                              fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                        <!-- Laptop/tablet -->
-                        <rect x="100" y="200" width="200" height="8" rx="4" fill="currentColor" opacity="0.8"/>
-                        <rect x="110" y="120" width="180" height="80" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <!-- Plant -->
-                        <path class="draw-path" d="M320 220 L320 180" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <ellipse cx="320" cy="170" rx="15" ry="25" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <ellipse cx="305" cy="180" rx="12" ry="20" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(-30 305 180)"/>
-                        <ellipse cx="335" cy="175" rx="12" ry="20" fill="none" stroke="currentColor" stroke-width="1.5" transform="rotate(30 335 175)"/>
-                        <!-- Pot -->
-                        <path d="M305 220 L310 240 L330 240 L335 220 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+
+                <div class="hero-doodle hero-doodle--coffee" aria-hidden="true">
+                    <svg class="doodle-art" viewBox="0 0 80 80">
+                        <path d="M20 32h31v15c0 8-6 14-14 14h-3c-8 0-14-6-14-14V32Z"/>
+                        <path d="M51 36h4c5 0 8 4 8 8s-3 8-8 8h-4"/>
+                        <path d="M28 24c2-3 2-6 0-9M37 24c2-3 2-6 0-9M46 24c2-3 2-6 0-9"/>
+                        <path d="M18 66h38"/>
                     </svg>
+                    <span class="doodle-label">coffee</span>
                 </div>
+
+                <div class="hero-doodle hero-doodle--books" aria-hidden="true">
+                    <svg class="doodle-art" viewBox="0 0 80 80">
+                        <path d="M10 24c8-4 16-4 24 0v38c-8-4-16-4-24 0V24Z"/>
+                        <path d="M34 24c8-4 16-4 24 0v38c-8-4-16-4-24 0"/>
+                        <path d="M16 34c4-1 8-1 12 1M16 43c4-1 8-1 12 1M40 35c4-2 8-2 12-1M40 44c4-2 8-2 12-1"/>
+                    </svg>
+                    <span class="doodle-label">books</span>
+                </div>
+
+                <div class="hero-doodle hero-doodle--plant" aria-hidden="true">
+                    <svg class="doodle-art" viewBox="0 0 80 80">
+                        <path d="M40 64V30"/>
+                        <path d="M40 48c-10-2-16-8-17-18 10 1 16 7 17 18Z"/>
+                        <path d="M40 40c9-2 15-8 17-17-9 1-16 7-17 17Z"/>
+                        <path d="M40 58c-7-1-12-6-13-13 7 1 12 5 13 13Z"/>
+                        <path d="M40 56c7-1 11-5 13-12-7 1-12 5-13 12Z"/>
+                        <path d="M29 66h22l-3 8H32l-3-8Z"/>
+                    </svg>
+                    <span class="doodle-label">quiet things</span>
+                </div>
+
+                <div class="hero-doodle hero-doodle--mail" aria-hidden="true">
+                    <svg class="doodle-art" viewBox="0 0 80 80">
+                        <rect x="12" y="26" width="56" height="36" rx="4"/>
+                        <path d="m12 30 28 20 28-20"/>
+                        <path d="M12 58l20-15M68 58 48 43"/>
+                    </svg>
+                    <span class="doodle-label">letters</span>
+                </div>
+
+                <figure class="hero-sticker fade-in-up delay-2">
+                    <img src="assets/images/persona-reading.png"
+                         alt="An illustrated reader holding an open book and a cup of coffee"
+                         width="520" height="686"
+                         fetchpriority="high">
+                    <figcaption>me, probably reading</figcaption>
+                </figure>
+
+                <figure class="hero-sticker hero-sticker--coffee" aria-hidden="true">
+                    <img src="assets/images/espresso-stamp.png" alt="" width="451" height="600">
+                    <figcaption>espresso, please</figcaption>
+                </figure>
             </div>
-            
-            <div class="scroll-indicator">
-                <span class="scroll-text">Scroll gently</span>
-                <div class="scroll-line"></div>
-            </div>
+
+            <a href="#about" class="scroll-cue">
+                <span>scroll gently</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
         </section>
 
-        <!-- About Section -->
+        <!-- About -->
         <section class="section about" id="about">
-            <div class="container">
-                <div class="section-header fade-in-up">
-                    <span class="section-number">01</span>
-                    <h2 class="section-title">About Me</h2>
-                </div>
-                
-                <div class="about-content">
-                    <div class="about-text fade-in-up">
-                        <div class="about-block">
-                            <h3>Who I Am</h3>
-                            <!-- EDIT: Replace this text with your personal story -->
-                            <p>
-                                I'm someone who finds beauty in the in-between moments like 
-                                the steam rising from a morning pour-over, the way afternoon 
-                                light hits my journal pages, the quiet satisfaction of 
-                                creating something meaningful.
-                            </p>
-                            <p>
-                                By day, I'm a Data & AI Engineer navigating the world of technology and
-                                continuous learning. By heart, I'm a 
-                                documenter of small joys and slow living advocate. 
-                                <br>
-                                <br> This corner of the
-                                internet is where those worlds meet.
-                            </p>
-                        </div>
-                        
-                        <div class="about-block">
-                            <h3>What I Love</h3>
-                            <!-- EDIT: Customize your interests -->
-                            <p>
-                                Analog rituals in a digital age. The weight of a good pen. 
-                                The smell of freshly ground coffee. The meditative process 
-                                of arranging thoughts into words, ideas into action. Creating digital spaces 
-                                that feel warm, human, and intentional.
-                            </p>
-                        </div>
-                        
-                        <div class="about-block">
-                            <h3>Why I Create</h3>
-                            <!-- EDIT: Your creative philosophy -->
-                            <p>
-                                I believe the internet needs more quiet corners and spaces 
-                                that feel like a deep breath rather than a shout. I create 
-                                to document my journey, share what I learn, and hopefully 
-                                inspire others to embrace their own creative rhythm.
-                            </p>
-                        </div>
-                        
-                        <div class="about-block coffee-journey">
-                            <h3>☕ My Coffee Journey</h3>
-                            <!-- EDIT: Your coffee story -->
-                            <p>
-                                It started with instant coffee since childhood, evolved 
-                                through a French press phase, and now I'm deep in the 
-                                rabbit hole of pour-overs and single origins. Each cup 
-                                is a small ceremony and a moment for a pause; grinding beans, watching the bloom, 
-                                waiting for that first sip. Coffee is my creative ritual.
-                            </p>
-                        </div>
+            <div class="container about-grid">
+                <div class="about-copy">
+                    <div class="section-head section-head--left fade-in-up">
+                        <p class="hand">a little about me</p>
+                        <h2 class="section-title">A quiet life,<br><em>richly</em> lived.</h2>
                     </div>
-                    
-                    <div class="about-visual fade-in-up delay-1">
-                        <div class="journal-page">
-                            <div class="journal-lines">
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line"></div>
-                                <div class="journal-line short"></div>
-                            </div>
-                            <div class="coffee-stain"></div>
-                        </div>
+
+                    <div class="about-letter fade-in-up">
+                        <p class="about-letter-intro">
+                            I’m a coffee lover, a book reader, and a collector of little joys.
+                        </p>
+                        <p class="about-letter-body">
+                            This is my little corner of the internet, where coffee tastes a little
+                            warmer, books feel like little escapes, and life slows down just enough
+                            to be enjoyed.
+                        </p>
+                        <p class="about-letter-body">
+                            A cozy space for slow mornings, good reads, coffee moments, and the
+                            simple things that make life beautiful.
+                        </p>
+                        <p class="about-letter-signoff">
+                            Make yourself at home. <span class="heart" aria-hidden="true">♡</span>
+                        </p>
                     </div>
                 </div>
+
+                <aside class="lately fade-in-up delay-1" aria-label="Life lately">
+                    <div class="paper-card">
+                        <span class="tape" aria-hidden="true"></span>
+                        <p class="card-hand">life, lately</p>
+                        <dl class="lately-list">
+                            <div><dt>reading</dt><dd>Kafka on the Shore</dd></div>
+                            <div><dt>sipping</dt><dd>a slow pour-over</dd></div>
+                            <div><dt>making</dt><dd>small internet corners</dd></div>
+                            <div><dt>learning</dt><dd>to slow down</dd></div>
+                        </dl>
+                        <p class="signoff">brewed slowly</p>
+                        <span class="coffee-stain" aria-hidden="true"></span>
+                    </div>
+
+                    <div class="nightstand">
+                        <p class="card-hand">on the nightstand</p>
+                        <div class="book-stack">
+                            <div class="stack-book stack-book--forest"><span>Kafka on the Shore</span></div>
+                            <div class="stack-book stack-book--terra"><span>The Vanishing Cherry Blossom Bookshop</span></div>
+                            <div class="stack-book stack-book--pink"><span>Welcome to the Hyunam-Dong Bookshop</span></div>
+                            <div class="stack-book stack-book--sage"><span>Days at the Morisaki Bookshop</span></div>
+                        </div>
+                        <p class="nightstand-note">always <span>one more.</span></p>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <!-- What I'm Working On -->
-        <section class="section working-on" id="working-on">
+        <!-- My Corners / Ventures -->
+        <section class="section corners" id="corners">
             <div class="container">
-                <div class="section-header fade-in-up">
-                    <span class="section-number">02</span>
-                    <h2 class="section-title">What I'm Working On</h2>
+                <div class="section-head fade-in-up">
+                    <p class="hand">what I’m building</p>
+                    <h2 class="section-title">My little <em>corners</em></h2>
+                    <p class="section-sub">Four little doors into what I make.</p>
                 </div>
-                
-                <div class="projects-grid">
-                    <!-- EDIT: Add/remove/modify project cards -->
-                    
-                    <article class="project-card fade-in-up"> 
-                        <h3 class="project-title">Digital Garden</h3>
-                        <p class="project-description">
-                            A personal knowledge base built with intention. 
-                            Growing ideas slowly, connecting thoughts organically.
-                        </p>
-                        <a href="https://www.instagram.com/meandmycoffeetales/" class="project-link" target="_blank" rel="noopener">
-                            Follow along →
-                        </a>
-                    </article>
-                    
-                    <article class="project-card fade-in-up delay-1">
-                        <div class="project-header">
-                            <span class="project-status status-experimenting">experimenting</span>
-                        </div>
-                        <h3 class="project-title">Euonia - here gently, </h3>
-                        <p class="project-description">
-                            A distraction free writing space for daily morning pages. 
-                            Minimal, warm, encouraging.
-                        </p>
-                        <a href="#" class="project-link" target="_blank" rel="noopener">
-                            Early access →
-                        </a>
-                    </article>
-                    
-                    <article class="project-card fade-in-up delay-2">
-                        <div class="project-header">
-                            <span class="project-status status-released">released</span>
-                        </div>
-                        <h3 class="project-title">Slow Living 3 days </h3>
-                        <p class="project-description">
-                            A 3 days promise to enjoy intentional living, 
-                            and finding joy in simplicity.
-                        </p>
-                        <a href="https://sizaa.gumroad.com/l/guaqwl" class="project-link" target="_blank" rel="noopener">
-                            Download Here →
-                        </a>
-                    </article>
-                    <article class="project-card fade-in-up">
-                        <div class="project-header">
-                            <span class="project-status status-building"> Projected </span>
-                        </div>
-                        <h3 class="project-title">with coffee, figuring it out </h3>
-                        <p class="project-description">
-                             A personal archive of thoughts, process, and small joys shared with a coffee, and with no pressure of figuring it out yet.
-                        </p>
-                        <a href="https://www.youtube.com/@withcoffeefiguringitout" class="project-link" target="https://www.youtube.com/@withcoffeefiguringitout" rel="noopener">
-                            Subscribe for more →
-                        </a>
-                    </article>
 
-                    <article class="project-card fade-in-up">
-                        <div class="project-header">
-                            <span class="project-status status-building">growing</span>
-                        </div>
-                    
-                        <h3 class="project-title">
-                            The Data & AI Engineer
-                        </h3>
-                    
-                        <p class="project-description">
-                            Tutorials, engineering concepts, AI workflows,
-                            data engineering insights, career growth,
-                            and practical lessons from building in tech.
-                        </p>
-                    
-                        <a href="https://www.youtube.com/@thedata_aiengineer"
-                           class="project-link"
-                           target="_blank"
-                           rel="noopener">
-                           Watch Tutorials →
+                <div class="shelf">
+                    <div class="books">
+                        <a class="book-card book--forest" href="https://quietreads.space/" target="_blank" rel="noopener" aria-label="Visit Quiet Reads, the book app">
+                            <span class="book-badge">new</span>
+                            <span class="book-cover">
+                                <span class="book-meta"><span>the book app</span><span class="book-mark" aria-hidden="true">✿</span></span>
+                                <span class="book-title">Quiet<br>Reads</span>
+                                <span class="book-rule" aria-hidden="true"></span>
+                                <span class="book-desc">A gentle home for the books you love.</span>
+                                <span class="book-foot"><span>quietreads.space</span><span class="book-arrow" aria-hidden="true">↗</span></span>
+                            </span>
                         </a>
-                    </article>
-                    
-                </div>
-            </div>
-        </section>
-                <!-- Email Newsletter Section -->
-                <section class="section newsletter" id="newsletter">
-                    <div class="container">
-                        <div class="newsletter-content fade-in-up">
-                            <div class="newsletter-text">
-                                <h2>Be the first to know</h2>
-                                <p>Get notified as soon as the products get soft launched!</p>
-                            </div>
-                            
-                            <form class="newsletter-form" action="https://formspree.io/f/xqedvvrk" method="POST">
-                                <div class="form-group">
-                                    <input 
-                                        type="email" 
-                                        name="email" 
-                                        placeholder="your@email.com" 
-                                        required
-                                        class="newsletter-input"
-                                        aria-label="Email address"
-                                    >
-                                    <button type="submit" class="btn btn-primary newsletter-btn">
-                                        Notify Me
-                                    </button>
-                                </div>
-                                <p class="form-note">No spam, just coffee & creativity. Unsubscribe anytime.</p>
-                            </form>
-                            
-                            <!-- Alternative: Simple mailto fallback -->
-                            <!-- 
-                            <a href="mailto:meandmycoffeetales@gmail.com?subject=Notify%20me%20when%20products%20launch&body=Please%20add%20me%20to%20your%20launch%20notification%20list." class="btn btn-primary">
-                                Join Waitlist →
-                            </a>
-                            -->
-                        </div>
+
+                        <a class="book-card book--terra" href="https://mycoffeetales.site/" target="_blank" rel="noopener" aria-label="Visit My Coffee Tales, the coffee app">
+                            <span class="book-cover">
+                                <span class="book-meta"><span>the coffee app · soon</span><span class="book-mark" aria-hidden="true">☕</span></span>
+                                <span class="book-title">My Coffee<br>Tales</span>
+                                <span class="book-rule" aria-hidden="true"></span>
+                                <span class="book-desc">Coffee rituals and stories between sips.</span>
+                                <span class="book-foot"><span>mycoffeetales.site</span><span class="book-arrow" aria-hidden="true">↗</span></span>
+                            </span>
+                        </a>
+
+                        <a class="book-card book--ink" href="https://www.youtube.com/@thedata_aiengineer" target="_blank" rel="noopener" aria-label="Visit The Data and AI Engineer on YouTube">
+                            <span class="book-cover">
+                                <span class="book-meta"><span>the youtube channel</span><span class="book-mark" aria-hidden="true">▷</span></span>
+                                <span class="book-title">The Data<br>&amp; AI<br>Engineer</span>
+                                <span class="book-rule" aria-hidden="true"></span>
+                                <span class="book-desc">Data, AI, and honest career notes.</span>
+                                <span class="book-foot"><span>@thedata_aiengineer</span><span class="book-arrow" aria-hidden="true">↗</span></span>
+                            </span>
+                        </a>
+
+                        <a class="book-card book--pink" href="https://substack.com/@thedataaiengineer" target="_blank" rel="noopener" aria-label="Visit the Substack newsletter">
+                            <span class="book-cover">
+                                <span class="book-meta"><span>the substack</span><span class="book-mark" aria-hidden="true">✎</span></span>
+                                <span class="book-title">Notes &amp;<br>Letters</span>
+                                <span class="book-rule" aria-hidden="true"></span>
+                                <span class="book-desc">Notes on tech, creativity, and slow living.</span>
+                                <span class="book-foot"><span>@thedataaiengineer</span><span class="book-arrow" aria-hidden="true">↗</span></span>
+                            </span>
+                        </a>
                     </div>
-                </section>
 
-        <!-- Digital Products -->
-        <section class="section products" id="products">
-            <div class="container">
-                <div class="section-header fade-in-up">
-                    <span class="section-number">03</span>
-                    <h2 class="section-title">Digital Products</h2>
-                    <p class="section-subtitle">Tools for your creative journey</p>
+                    <span class="shelf-edge" aria-hidden="true"></span>
                 </div>
-                
-                <div class="products-grid">
-                    <!-- EDIT: Modify product cards with your actual products -->
-                    
-                    <article class="product-card fade-in-up">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span>Notion Template</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">The Slow Creator's Dashboard</h3>
-                            <p class="product-description">
-                                A minimalist Notion workspace for managing creative 
-                                projects without overwhelm.
-                            </p>
-                            <div class="product-footer">
-                                <span class="product-price"> in progress</span>
-                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="product-card fade-in-up delay-1">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span>Digital guide </span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Digital Journaling Systems</h3>
-                            <p class="product-description">
-                                A guided digital journaling workspace designed to
-                                help you think clearly, track growth, and build
-                                a sustainable reflection practice.
-                            </p>
-                            <div class="product-footer">
-                                <span class="product-price"> coming soon</span>
-                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">
-                                    Get It
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="product-card fade-in-up delay-2">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span>Planner</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Creator Content Planner</h3>
-                            <p class="product-description">
-                                A streamlined planning system for creators,
-                                writers, and educators to organize ideas,
-                                content, and publishing workflows.
-                            </p>
-                            <div class="product-footer">
-                                <span class="product-price">in progress </span>
-                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">
-                                    Get it
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-<!--                     
-                    <article class="product-card fade-in-up">
-                        <div class="product-image">
-                            <div class="product-placeholder">
-                                <span>Template Pack</span>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-name">Instagram Story Templates</h3>
-                            <p class="product-description">
-                                20 aesthetic story templates for sharing your 
-                                creative process and daily moments.
-                            </p>
-                            <div class="product-footer">
-                                <span class="product-price">$coming soon</span>
-                                <a href="#" class="btn btn-small" target="_blank" rel="noopener">
-                                    View Details
-                                </a>
-                            </div>
-                        </div>
-                    </article> -->
-                </div>
+
+                <p class="shelf-note fade-in-up">
+                    My Coffee Tales is still brewing.
+                    <a class="link-hand" href="#coffee-waitlist">join the waitlist <span aria-hidden="true">↓</span></a>
+                </p>
             </div>
         </section>
 
-        <!-- Experience & Skills -->
-        <section class="section experience" id="experience">
-            <div class="container">
-                <div class="section-header fade-in-up">
-                    <span class="section-number">04</span>
-                    <h2 class="section-title">My Journey</h2>
+        <!-- My Coffee Tales Waitlist -->
+        <section class="waitlist" id="coffee-waitlist" aria-labelledby="coffee-waitlist-title">
+            <div class="container waitlist-inner fade-in-up">
+                <div class="waitlist-copy">
+                    <p class="hand">something warm is brewing</p>
+                    <h2 id="coffee-waitlist-title">My Coffee Tales is almost ready</h2>
+                    <p>Leave your email and I’ll write when it opens.</p>
                 </div>
-                
-                <div class="timeline">
-                    <!-- EDIT: Customize timeline entries -->
-                    
-                    <div class="timeline-item fade-in-up">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">Learning</span>
-                            <h3>The Foundations</h3>
-                            <p>
-                                Self-taught through curiosity and countless YouTube 
-                                tutorials. Learned that the best way to understand 
-                                something is to build it. And implementing it through my professional experience.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">Data Engineering</span>
-                                <span class="tag">AI</span>
-                                <span class="tag">SQL</span>
-                                <span class="tag">Prompt Engineering </span>
-                                <span class="tag">Design Principles</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item fade-in-up">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">Creating</span>
-                            <h3>First Digital Products</h3>
-                            <p>
-                                Transformed my personal systems into templates others 
-                                could use. Discovered the joy of creating tools that 
-                                help people.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">Notion</span>
-                                <span class="tag">Product Design</span>
-                                <span class="tag">User Experience</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item fade-in-up">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">Growing</span>
-                            <h3>Community & Connection</h3>
-                            <p>
-                                Started sharing my journey publicly. Learned that 
-                                vulnerability resonates more than perfection.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">Content Creation</span>
-                                <span class="tag">Storytelling</span>
-                                <span class="tag">Community Building</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item fade-in-up">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <span class="timeline-date">Exploring</span>
-                            <h3>Current Chapter</h3>
-                            <p>
-                                Diving deeper into creative coding, exploring the 
-                                intersection of technology and mindfulness.
-                            </p>
-                            <div class="timeline-tags">
-                                <span class="tag">Creative Coding</span>
-                                <span class="tag">Writing</span>
-                                <span class="tag">Digital Wellness</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Skills -->
-                <div class="skills-section fade-in-up">
-                    <h3>Things I Work With</h3>
-                    <div class="skills-cloud">
-                        <!-- EDIT: Modify skills -->
-                        <span class="skill-item">AWS</span>
-                        <span class="skill-item">Prompt Engineering </span>
-                        <span class="skill-item">AI </span>
-                        <span class="skill-item">Canva </span>
-                        <span class="skill-item">Notion</span>
-                        <span class="skill-item">Writing</span>
-                        <span class="skill-item">Photography</span>
-                        <span class="skill-item">ScriptWriting</span>
-                        <span class="skill-item">Content Creation</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-                <!-- PR & Collaborations Section -->
-                <section class="section collaborations" id="collaborations">
-                    <div class="container">
-                        <div class="section-header fade-in-up">
-                            <span class="section-number">05</span>
-                            <h2 class="section-title">Collaborations & Press</h2>
-                            <p class="section-subtitle">Partnerships, features, and creative collaborations</p>
-                        </div>
-                        
-                        <!-- Stats/Highlights -->
-                        <div class="collab-stats fade-in-up">
-                            <div class="stat-item">
-                                <span class="stat-number">100+</span>
-                                <span class="stat-label">Community</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">Creative</span>
-                                <span class="stat-label">Projects</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">20% +</span>
-                                <span class="stat-label">Engagement</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Brand Logos (As Seen In) -->
-                        <!-- <div class="collab-brands fade-in-up">
-                            <p class="brands-label">Trusted by</p>
-                            <div class="brands-logos"> -->
-                                <!-- EDIT: Replace with actual brand logos or names -->
-                                <!-- <div class="brand-logo">Notion</div>
-                                <div class="brand-logo">Gumroad</div>
-                                <div class="brand-logo">Figma</div>
-                                <div class="brand-logo">Read.cv</div>
-                            </div>
-                        </div> -->
-                        
-                        <!-- Collaboration Types -->
-                        <div class="collab-types">
-                            <h3 class="collab-heading fade-in-up">Ways We Can Work Together</h3>
-                            
-                            <div class="collab-grid">
-                                <article class="collab-card fade-in-up">
-                                    <div class="collab-icon">🎨</div>
-                                    <h4>Brand Partnerships</h4>
-                                    <p>Authentic collaborations with brands that align with slow living, creativity, coffee culture, and mindful productivity.</p>
-                                    <ul class="collab-list">
-                                        <li>Product reviews & features</li>
-                                        <li>Sponsored content</li>
-                                        <li>Brand ambassadorships</li>
-                                        <li>Creative campaigns</li>
-                                    </ul>
-                                </article>
-                                
-                                <article class="collab-card fade-in-up delay-1">
-                                    <div class="collab-icon">✍️</div>
-                                    <h4>Content Creation</h4>
-                                    <p>Visual storytelling and written content for your brand's digital presence.</p>
-                                    <ul class="collab-list">
-                                        <li>Social media campaigns</li>
-                                        <li>ScriptWriting</li>
-                                        <li>Blogs/Articles Creation </li>
-                                        <li>Notion template design</li>
-                                        <li>Educational contents</li>
-                                        <li>Creative strategy and consulting</li>
-                                    </ul>
-                                </article>
-                                
-                                <article class="collab-card fade-in-up delay-2">
-                                    <div class="collab-icon">🎙️</div>
-                                    <h4> Speaking & Workshops</h4>
-                                    <p>Sharing insights on creative workflows, digital minimalism, and building online.</p>
-                                    <ul class="collab-list">
-                                        <li>Podcast interviews</li>
-                                        <li>Workshop facilitation</li>
-                                        <li>Panel discussions</li>
-                                        <li>YouTube tutorials & educational content</li>
-                                        <li>Women in tech talks</li>
-                                        <li>Engineering career discussions</li>
-                                        <li>Motivational and growth-focused sessions</li>
-                                    </ul>
-                                </article>
-                            </div>
-                        </div>
-                        
-                        <!-- Press Features -->
-                        <div class="press-section fade-in-up">
-                            <h3 class="collab-heading">As Featured In</h3>
-                            <div class="press-grid">
-                                <!-- EDIT: Add your actual press mentions -->
-                                <!-- <a href="https://www.instagram.com/stories/highlights/18074124581435051/" class="press-item" target="_blank" rel="noopener">
-                                    <span class="press-name">Coffee of Promise </span>
-                                    <span class="press-topic"> Stories and Posts </span>
-                                </a> -->
-                                <a href="https://www.instagram.com/reel/DVKyNhADfTo/?igsh=MTNrdzJtbnFlczRt" class="press-item" target="_blank" rel="noopener">
-                                    <span class="press-name">Coffee of Promise</span>
-                                    <span class="press-topic">Stories and Posts</span>
-                                </a>
-                                <a href="https://www.instagram.com/reel/DXDk4zHj9U1PM8tvupyTKc4uvd3ystVJf0l5ks0/" class="press-item" target="_blank" rel="noopener">
-                                    <span class="press-name">Nya:No coffee </span>
-                                    <span class="press-topic">Stories and Posts </span>
-                                </a>
-                                <!-- <a href="#" class="press-item" target="_blank" rel="noopener">
-                                    <span class="press-name">Slow Living Collective</span>
-                                    <span class="press-topic">Intentional Creativity</span>
-                                </a> -->
-                            </div>
-                        </div>
-                        
-                        <!-- CTA -->
-                        <div class="collab-cta fade-in-up">
-                            <p class="collab-text">Interested in collaborating?</p>
-                            <a href="mailto:thedataaiengineer17@gmail.com" class="btn btn-primary">
-                                Let's Talk →
-                            </a>
-                            <!-- <a href="#" class="collab-media-kit" target="_blank" rel="noopener">
-                                Download Media Kit
-                            </a> -->
-                        </div>
-                    </div>
-                </section>
 
-        <!-- Passion & Interests -->
-        <section class="section passions" id="passions">
-            <div class="container">
-                <div class="section-header fade-in-up">
-                    <span class="section-number">06</span>
-                    <h2 class="section-title">What Fills My Cup</h2>
-                </div>
-                
-                <div class="passions-grid">
-                    <!-- EDIT: Customize passion items -->
-                    
-                    <div class="passion-item fade-in-up">
-                        <div class="passion-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-                                <line x1="6" y1="1" x2="6" y2="4"/>
-                                <line x1="10" y1="1" x2="10" y2="4"/>
-                                <line x1="14" y1="1" x2="14" y2="4"/>
-                            </svg>
-                        </div>
-                        <h3>Coffee</h3>
-                        <p>Morning ritual, afternoon pause, and evening decaf</p>
+                <!-- Keeps working through Formspree until the Google Sheet endpoint is set in script.js. -->
+                <form class="newsletter-form" action="https://formspree.io/f/xqedvvrk" method="POST">
+                    <input type="hidden" name="_subject" value="My Coffee Tales waitlist">
+                    <input type="hidden" name="interest" value="my-coffee-tales">
+                    <input type="hidden" name="source" value="cups-and-chapters">
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="coffee-waitlist-gotcha">Leave this field empty</label>
+                        <input type="text" name="_gotcha" id="coffee-waitlist-gotcha" tabindex="-1" autocomplete="off">
                     </div>
-                    
-                    <div class="passion-item fade-in-up delay-1">
-                        <div class="passion-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                <polyline points="14 2 14 8 20 8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                <polyline points="10 9 9 9 8 9"/>
-                            </svg>
-                        </div>
-                        <h3>Journaling</h3>
-                        <p>Processing thoughts, tracking growth, remembering</p>
+                    <div class="form-row">
+                        <label class="sr-only" for="coffee-waitlist-email">Email address</label>
+                        <input type="email" name="email" id="coffee-waitlist-email" placeholder="your@email.com" required autocomplete="email" class="newsletter-input">
+                        <button type="submit" class="btn btn-ink">Join the waitlist</button>
                     </div>
-                    
-                    <div class="passion-item fade-in-up delay-2">
-                        <div class="passion-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-                                <line x1="9" y1="9" x2="9.01" y2="9"/>
-                                <line x1="15" y1="9" x2="15.01" y2="9"/>
-                            </svg>
-                        </div>
-                        <h3>Storytelling</h3>
-                        <p>Finding narrative in everyday moments</p>
-                    </div>
-                    
-                    <div class="passion-item fade-in-up">
-                        <div class="passion-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"/>
-                                <rect x="9" y="9" width="6" height="6"/>
-                                <line x1="9" y1="1" x2="9" y2="4"/>
-                                <line x1="15" y1="1" x2="15" y2="4"/>
-                                <line x1="9" y1="20" x2="9" y2="23"/>
-                                <line x1="15" y1="20" x2="15" y2="23"/>
-                                <line x1="20" y1="9" x2="23" y2="9"/>
-                                <line x1="20" y1="14" x2="23" y2="14"/>
-                                <line x1="1" y1="9" x2="4" y2="9"/>
-                                <line x1="1" y1="14" x2="4" y2="14"/>
-                            </svg>
-                        </div>
-                        <h3>Tech</h3>
-                        <p>Building digital tools with human warmth</p>
-                    </div>
-                    
-                    <div class="passion-item fade-in-up delay-1">
-                        <div class="passion-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <h3>Aesthetics</h3>
-                        <p>Beauty in simplicity, harmony in design</p>
-                    </div>
-                    
-                    <div class="passion-item fade-in-up delay-2">
-                        <div class="passion-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                            </svg>
-                        </div>
-                        <h3>Slow Living</h3>
-                        <p>Intention over urgency, presence over productivity</p>
-                    </div>
-                </div>
+                    <p class="form-note">One email when it’s ready. No spam.</p>
+                </form>
             </div>
         </section>
 
-        <!-- Support Section -->
-        <section class="section support" id="support">
-            <div class="container">
-                <div class="support-content fade-in-up">
-                    <div class="support-text">
-                        <span class="section-number">07</span>
-                        <h2>Support My Work</h2>
-                        <p>
-                            Creating these resources takes time, coffee, and a lot of heart. 
-                            If my work has added value to your life, consider supporting 
-                            my journey. Every contribution helps me continue creating 
-                            and sharing with this wonderful community.
-                        </p>
-                        <p class="support-thanks">
-                            Thank you for being here. ☕
-                        </p>
-                    </div>
-                    
-                    <div class="support-actions">
-                        <!-- EDIT: Replace # with your actual links -->
-                        <a href="https://buymemomo.com/meandmycoffeetales" class="support-btn btn-coffee" target="_blank" rel="noopener">
-                            <span class="support-icon">🥟</span>
-                            <span class="support-label">Buy me momo </span>
-                        </a>
-                        
-                        <a href="buymeacoffee.com/flgzgfniyv/2026-wishlist" class="support-btn btn-wishlist" target="_blank" rel="noopener">
-                            <span class="support-icon">🎁</span>
-                            <span class="support-label">2026 wishlist </span>
-                        </a>
-                        
-                        <a href="https://www.buymeacoffee.com/FlGZgfnIYV"
-                                target="_blank"
-                                rel="noopener">
-                                    <img
-                                        src="https://img.buymeacoffee.com/button-api/?text=Support me with a coffee&emoji=☕&slug=FlGZgfnIYV&button_colour=f5f1eb&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00"
-                                        alt="Support me with a coffee">
-                                </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- My Setup -->
+        <!-- Things I Use -->
         <section class="section setup" id="setup">
             <div class="container">
-                <div class="section-header fade-in-up">
-                    <span class="section-number">08</span>
-                    <h2 class="section-title">Things I Use</h2>
-                    <p class="section-subtitle">Tools that support my creative process</p>
+                <div class="section-head fade-in-up">
+                    <p class="hand">the little rituals</p>
+                    <h2 class="section-title">Things I <em>use</em></h2>
+                    <p class="section-sub">A few things I reach for.</p>
                 </div>
-                
-                <div class="setup-grid">
-                    <!-- EDIT: Customize your gear list -->
-                    
-                    <div class="setup-category fade-in-up">
-                        <h3>Digital</h3>
-                        <ul class="setup-list">
-                            <li class="setup-item">
-                                <span class="setup-name">Macbook Air M1 </span>
-                                <span class="setup-desc">For my daily work and creativity </span>
-                                <!-- EDIT: Add your affiliate link -->
-                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a> -->
-                            </li>
-                            <li class="setup-item">
-                                <span class="setup-name">Notion</span>
-                                <span class="setup-desc">My digital hub</span>
-                                <a href="#" class="setup-link" target="_blank" rel="noopener">Try free →</a>
-                            </li>
-                            <li class="setup-item">
-                                <span class="setup-name">Canva</span>
-                                <span class="setup-desc">Digital illustration & designing </span>
-                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">App Store →</a> -->
-                            </li>
-                            <li class="setup-item">
-                                <span class="setup-name">GoodNotes</span>
-                                <span class="setup-desc">Handwritten notes & planning</span>
-                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">App Store →</a> -->
-                            </li>
-                        </li>
-                        <li class="setup-item">
-                            <span class="setup-name">PrimeClip.pro</span>
-                            <span class="setup-desc">For Caption generation and structure </span>
-                            <a href="https://primeclip.pro/" class="setup-link" target="_blank" rel="noopener">Visit here →</a>
-                        </li>
-                        </ul>
+
+                <div class="arsenal">
+                    <div class="arsenal-cluster arsenal-cluster--digital fade-in-up">
+                        <p class="arsenal-heading">digital</p>
+                        <div class="arsenal-items">
+                            <div class="arsenal-item">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <rect class="wash" x="15" y="17" width="50" height="34" rx="3"/>
+                                        <rect class="line" x="15" y="17" width="50" height="34" rx="3"/>
+                                        <path class="line" d="M9 58h62l-5 7H14l-5-7Z"/>
+                                        <path class="line" d="M25 27h20M25 34h13"/>
+                                        <circle class="accent" cx="40" cy="46" r="1.6"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">MacBook Air M1</span>
+                            </div>
+
+                            <a class="arsenal-item" href="https://www.notion.so/" target="_blank" rel="noopener">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="wash" d="M21 11h27l11 11v47H21V11Z"/>
+                                        <path class="line" d="M21 11h27l11 11v47H21V11Z"/>
+                                        <path class="line" d="M48 11v11h11"/>
+                                        <path class="line" d="M29 29h20M29 37h20M29 45h13M29 53h9"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Notion</span>
+                                <span class="arsenal-meta">digital hub</span>
+                            </a>
+
+                            <div class="arsenal-item">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="wash" d="M40 11a29 29 0 1 0 0 58c8 0 9-8 4-13-4-5 0-10 6-10h7a11 11 0 0 0 11-11c0-14-13-24-28-24Z"/>
+                                        <path class="line" d="M40 11a29 29 0 1 0 0 58c8 0 9-8 4-13-4-5 0-10 6-10h7a11 11 0 0 0 11-11c0-14-13-24-28-24Z"/>
+                                        <circle class="accent" cx="28" cy="31" r="2.6"/>
+                                        <circle class="accent" cx="40" cy="24" r="2.6"/>
+                                        <circle class="accent" cx="52" cy="31" r="2.6"/>
+                                        <circle class="line" cx="53" cy="47" r="3"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Canva</span>
+                            </div>
+
+                            <div class="arsenal-item">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <rect class="wash" x="22" y="12" width="34" height="54" rx="3"/>
+                                        <rect class="line" x="22" y="12" width="34" height="54" rx="3"/>
+                                        <path class="line" d="M30 20v38M37 28h12M37 36h12M37 44h8"/>
+                                        <path class="wash" d="m50 20 8 8-12 12-9 2 1-9 12-12Z"/>
+                                        <path class="line" d="m50 20 8 8-12 12-9 2 1-9 12-12Z"/>
+                                        <path class="line" d="m56 28 3-3a3 3 0 0 1 4 4l-3 3"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">GoodNotes</span>
+                            </div>
+
+                            <a class="arsenal-item" href="https://quietreads.space/" target="_blank" rel="noopener">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="wash" d="M12 24c9-4 17-4 26 0v38c-9-4-17-4-26 0V24Z"/>
+                                        <path class="line" d="M12 24c9-4 17-4 26 0v38c-9-4-17-4-26 0V24Z"/>
+                                        <path class="line" d="M38 24c9-4 17-4 26 0v38c-9-4-17-4-26 0"/>
+                                        <path class="line" d="M19 35c5-1 9-1 13 1M19 44c5-1 9-1 13 1M19 53c5-1 9-1 9 1" opacity=".55"/>
+                                        <path class="line" d="M44 36h13M44 45h13M44 54h9" opacity=".55"/>
+                                        <path class="accent" d="M48 24h10v15l-5-3.5-5 3.5V24Z"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Quiet Reads</span>
+                            </a>
+                        </div>
                     </div>
-                    
-                    <div class="setup-category fade-in-up delay-1">
-                        <h3>Analog</h3>
-                        <ul class="setup-list">
-                            <li class="setup-item">
-                                <span class="setup-name">Notebook</span>
-                                <span class="setup-desc">A2 - for brainstorming moments </span>
-                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a> -->
-                            </li>
-                            <li class="setup-item">
-                                <span class="setup-name">Ballpoint pen</span>
-                                <span class="setup-desc">My everyday writing companion</span>
-                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a> -->
-                            </li>
-                            <li class="setup-item">
-                                <span class="setup-name">Current Read </span>
-                                <span class="setup-desc">Murakami, Kafka on the shore</span>
-                                <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a>
-                            </li>
-                            <li class="setup-item">
-                                <span class="setup-name">Desk lamp </span>
-                                <span class="setup-desc">For aesthetics </span>
-                                <!-- <a href="https://www.instagram.com/p/DUOE9rGE33g/?img_index=1" class="setup-link" target="_blank" rel="noopener">View →</a> -->
-                            </li>
-                        </ul>
+
+                    <div class="arsenal-cluster arsenal-cluster--analog fade-in-up delay-1">
+                        <p class="arsenal-heading">analog</p>
+                        <div class="arsenal-items">
+                            <div class="arsenal-item">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <rect class="wash" x="20" y="12" width="40" height="56" rx="3"/>
+                                        <rect class="line" x="20" y="12" width="40" height="56" rx="3"/>
+                                        <path class="line" d="M28 12v56"/>
+                                        <path class="accent" d="M44 40c2-4 8-4 10 0 2-4 8-4 10 0 0 5-10 12-10 12S44 45 44 40Z"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Notebook</span>
+                            </div>
+
+                            <div class="arsenal-item">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="wash" d="m20 60 5-15 27-27 12 12-27 27-17 3Z"/>
+                                        <path class="line" d="m20 60 5-15 27-27 12 12-27 27-17 3Z"/>
+                                        <path class="line" d="m52 18 12 12M25 45l12 12M20 60l5-15"/>
+                                        <path class="line" d="M20 60 14 66"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Ballpoint pen</span>
+                            </div>
+
+                            <div class="arsenal-item">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="line" d="M20 64h40M40 64V44"/>
+                                        <path class="wash" d="M26 44h28L43 20h-6L26 44Z"/>
+                                        <path class="line" d="M26 44h28L43 20h-6L26 44Z"/>
+                                        <path class="line" d="M48 27h8M48 33h8" opacity=".45"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Desk lamp</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="setup-category fade-in-up delay-2">
-                        <h3>Coffee</h3>
-                        <ul class="setup-list">
-                            <li class="setup-item">
-                                <span class="setup-name">V60 GLASS DRIPPER</span>
-                                <span class="setup-desc">Daily brewing ritual</span>
-                                <!-- <a href="https://thebrewinghouse.com/product/v60-glass-dripper/" class="setup-link" target="_blank" rel="noopener">View →</a> -->
-                            </li>
-                            <li class="setup-item">
-                                <span class="setup-name">French Press </span>
-                                <span class="setup-desc">Consistent, portable, beautiful</span>
-                                <a href="https://coffeeofpromise.com/" class="setup-link" target="_blank" rel="noopener">View →</a>
-                            </li>
-                            <li class="setup-item">
-                                <span class="setup-name">Coffee Filter from Vietnam</span>
-                                <span class="setup-desc">Aromatic brew and experience  </span>
-                                <!-- <a href="#" class="setup-link" target="_blank" rel="noopener">View →</a> -->
-                            </li>
-                            <li class="setup-item">
-                                <span class="setup-name">Coffee of Promise </span>
-                                <span class="setup-desc"> Medium Dark Roast </span>
-                                <a href="https://coffeeofpromise.com/product/lalitpur-nepal-medium-dark-roast/" class="setup-link" target="_blank" rel="noopener">View →</a>
-                            </li>
+
+                    <div class="arsenal-cluster arsenal-cluster--coffee fade-in-up delay-2">
+                        <p class="arsenal-heading">coffee</p>
+                        <div class="arsenal-items">
+                            <div class="arsenal-item">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="wash" d="M23 17h34L46 38H34L23 17Z"/>
+                                        <path class="line" d="M23 17h34L46 38H34L23 17Z"/>
+                                        <path class="line" d="M29 42h22v13a6 6 0 0 1-6 6H35a6 6 0 0 1-6-6V42Z"/>
+                                        <path class="line" d="M51 46h4a4 4 0 0 1 0 8h-4"/>
+                                        <path class="line" d="M37 46v9M43 46v9" opacity=".5"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">V60 glass dripper</span>
+                            </div>
+
+                            <a class="arsenal-item" href="https://coffeeofpromise.com/" target="_blank" rel="noopener">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="wash" d="M27 26h26v38H27z"/>
+                                        <path class="line" d="M27 26h26v38H27z"/>
+                                        <path class="line" d="M53 34h4a4 4 0 0 1 0 8h-4"/>
+                                        <path class="line" d="M33 18h14M40 18v8M32 26h16M32 54h16"/>
+                                        <path class="line" d="M40 34v14" opacity=".5"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">French press</span>
+                            </a>
+
+                            <div class="arsenal-item">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <ellipse class="line" cx="40" cy="18" rx="16" ry="4"/>
+                                        <path class="line" d="M24 18v9c0 4 32 4 32 0v-9"/>
+                                        <path class="line" d="M34 27v5M40 27v7M46 27v5" opacity=".55"/>
+                                        <path class="wash" d="M28 42h24v13a8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8V42Z"/>
+                                        <path class="line" d="M28 42h24v13a8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8V42Z"/>
+                                        <path class="line" d="M52 46h4a3 3 0 0 1 0 6h-4"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Vietnamese filter</span>
+                            </div>
+
+                            <a class="arsenal-item" href="https://coffeeofpromise.com/product/lalitpur-nepal-medium-dark-roast/" target="_blank" rel="noopener">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="wash" d="M24 22h32l-3 45H27l-3-45Z"/>
+                                        <path class="line" d="M24 22h32l-3 45H27l-3-45Z"/>
+                                        <path class="line" d="M29 22c2-7 20-7 22 0"/>
+                                        <path class="line" d="M24 31h32" opacity=".55"/>
+                                        <rect class="line" x="34" y="38" width="12" height="14" rx="1"/>
+                                        <path class="line" d="M37 43h6M37 47h4" opacity=".6"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Coffee of Promise</span>
+                                <span class="arsenal-meta">medium dark</span>
+                            </a>
+
+                            <div class="arsenal-item arsenal-item--gokyo">
+                                <span class="arsenal-icon arsenal-icon--gokyo" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="wash" d="M24 22h32l-3 45H27l-3-45Z"/>
+                                        <path class="line" d="M24 22h32l-3 45H27l-3-45Z"/>
+                                        <path class="line" d="M29 22c2-7 20-7 22 0"/>
+                                        <path class="line" d="M24 31h32" opacity=".55"/>
+                                        <path class="line" d="m31 47 6-12 5 8 3-5 4 9"/>
+                                        <path class="line" d="M31 55h18"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Kathmandu Coffee</span>
+                                <span class="arsenal-meta">Gokyo Blue</span>
+                            </div>
+
+                            <div class="arsenal-item">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <path class="wash" d="M18 30h44v28H18z"/>
+                                        <path class="line" d="M18 30h44v28H18z"/>
+                                        <path class="line" d="M22 22h36l-4 8H26l-4-8Z"/>
+                                        <path class="line" d="M27 39h12v8H27z"/>
+                                        <path class="line" d="M33 47v5M29 52h8"/>
+                                        <path class="line" d="M48 39h6v6h-6z"/>
+                                        <path class="line" d="M24 58h32"/>
+                                        <path class="line" d="M44 53h8v5h-8z" opacity=".6"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">Espresso machine</span>
+                                <span class="arsenal-meta">new</span>
+                            </div>
+
+                            <a class="arsenal-item arsenal-item--link" href="#coffee-waitlist">
+                                <span class="arsenal-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 80 80">
+                                        <rect class="wash" x="25" y="10" width="30" height="60" rx="5"/>
+                                        <rect class="line" x="25" y="10" width="30" height="60" rx="5"/>
+                                        <path class="line" d="M35 16h10" opacity=".5"/>
+                                        <path class="line" d="M32 36h16v9a8 8 0 0 1-16 0v-9Z"/>
+                                        <path class="line" d="M48 38h3a3 3 0 0 1 0 6h-3"/>
+                                        <path class="line" d="M36 30c1-2 1-3 0-5M42 30c1-2 1-3 0-5" opacity=".55"/>
+                                        <circle class="accent" cx="40" cy="59" r="2"/>
+                                    </svg>
+                                </span>
+                                <span class="arsenal-name">My Coffee Tales</span>
+                                <span class="arsenal-meta">brewing soon</span>
+                                <span class="arsenal-meta arsenal-meta--link">join waitlist <span aria-hidden="true">↑</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="arsenal-signoff fade-in-up">this is my arsenal <span>:)</span></p>
+            </div>
+        </section>
+
+        <!-- Journey -->
+        <section class="section journey" id="journey">
+            <div class="container">
+                <div class="section-head fade-in-up">
+                    <p class="hand">the story so far</p>
+                    <h2 class="section-title">A few <em>chapters</em></h2>
+                    <p class="section-sub">A shelf of unfinished books.</p>
+                </div>
+
+                <p class="film-hint" aria-hidden="true">swipe to wander through →</p>
+
+                <div class="filmstrip fade-in-up">
+                    <div class="film-track">
+                        <article class="film-frame">
+                            <span class="frame-chapter">chapter one</span>
+                            <h3>The Foundations</h3>
+                            <p>Self-taught, curious, and always building.</p>
+                            <ul class="frame-tags">
+                                <li>Data engineering</li>
+                                <li>AI</li>
+                                <li>SQL</li>
+                            </ul>
+                        </article>
+
+                        <article class="film-frame">
+                            <span class="frame-chapter">chapter two</span>
+                            <h3>First Digital Products</h3>
+                            <p>Turned my own systems into templates others could use.</p>
+                            <ul class="frame-tags">
+                                <li>Notion</li>
+                                <li>Product design</li>
+                                <li>User experience</li>
+                            </ul>
+                        </article>
+
+                        <article class="film-frame">
+                            <span class="frame-chapter">chapter three</span>
+                            <h3>Community &amp; Connection</h3>
+                            <p>Started sharing the journey out loud.</p>
+                            <ul class="frame-tags">
+                                <li>Content creation</li>
+                                <li>Storytelling</li>
+                                <li>Community building</li>
+                            </ul>
+                        </article>
+
+                        <article class="film-frame">
+                            <span class="frame-chapter">chapter four</span>
+                            <h3>Current Chapter</h3>
+                            <p>More creative coding, more reading, less rushing.</p>
+                            <ul class="frame-tags">
+                                <li>Creative coding</li>
+                                <li>Writing</li>
+                                <li>Digital wellness</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="skills fade-in-up">
+                    <h3 class="skills-title">things I work with</h3>
+                    <ul class="skill-list">
+                        <li>AWS</li>
+                        <li>Data engineering</li>
+                        <li>SQL</li>
+                        <li>AI</li>
+                        <li>Prompt engineering</li>
+                        <li>Writing</li>
+                        <li>Storytelling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaborations & Press -->
+        <section class="section collaborate" id="collaborate">
+            <div class="container">
+                <div class="section-head fade-in-up">
+                    <p class="hand">let's make something together</p>
+                    <h2 class="section-title">Collaborations &amp; <em>press</em></h2>
+                    <p class="section-sub">A few ways we can work together.</p>
+                </div>
+
+                <div class="collab-grid">
+                    <article class="collab-card fade-in-up">
+                        <div class="collab-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 3a9 9 0 1 0 0 18h1.5a1.5 1.5 0 0 0 0-3H12a2 2 0 0 1 0-4h4a5 5 0 0 0 5-5c0-3.3-4-6-9-6Z"/>
+                                <circle cx="7.5" cy="10.5" r=".8" fill="currentColor" stroke="none"/>
+                                <circle cx="10" cy="7" r=".8" fill="currentColor" stroke="none"/>
+                                <circle cx="14" cy="7" r=".8" fill="currentColor" stroke="none"/>
+                                <circle cx="17" cy="10" r=".8" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </div>
+                        <h4>Brand Partnerships</h4>
+                        <p>Slow, honest collaborations with brands I use.</p>
+                        <ul class="collab-list">
+                            <li>Product features</li>
+                            <li>Sponsored content</li>
+                            <li>Creative campaigns</li>
                         </ul>
+                    </article>
+
+                    <article class="collab-card fade-in-up delay-1">
+                        <div class="collab-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m4 20 4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10L4 20Z"/>
+                                <path d="m13.5 7 3 3"/>
+                                <path d="M4 20h4"/>
+                            </svg>
+                        </div>
+                        <h4>Content Creation</h4>
+                        <p>Words and visuals for your corner of the internet.</p>
+                        <ul class="collab-list">
+                            <li>Social campaigns</li>
+                            <li>Blogs &amp; scripts</li>
+                            <li>Notion templates</li>
+                            <li>Creative strategy</li>
+                        </ul>
+                    </article>
+
+                    <article class="collab-card fade-in-up delay-2">
+                        <div class="collab-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="3" width="6" height="11" rx="3"/>
+                                <path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/>
+                            </svg>
+                        </div>
+                        <h4>Speaking &amp; Workshops</h4>
+                        <p>Honest talks about tech, creativity, and slow work.</p>
+                        <ul class="collab-list">
+                            <li>Podcasts</li>
+                            <li>Workshops</li>
+                            <li>Panels</li>
+                            <li>Career talks</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="press fade-in-up">
+                    <p class="press-label">as featured in</p>
+                    <div class="press-links">
+                        <a class="press-link" href="https://www.instagram.com/reel/DVKyNhADfTo/?igsh=MTNrdzJtbnFlczRt" target="_blank" rel="noopener">
+                            <span class="press-name">Coffee of Promise</span>
+                            <span class="press-topic">stories &amp; posts</span>
+                            <span class="press-arrow" aria-hidden="true">↗</span>
+                        </a>
+                        <a class="press-link" href="https://www.instagram.com/reel/DXDk4zHj9U1PM8tvupyTKc4uvd3ystVJf0l5ks0/" target="_blank" rel="noopener">
+                            <span class="press-name">Nya:No Coffee</span>
+                            <span class="press-topic">stories &amp; posts</span>
+                            <span class="press-arrow" aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="collab-cta fade-in-up">
+                    <p class="hand">have something in mind?</p>
+                    <a href="mailto:thedataaiengineer17@gmail.com" class="btn btn-ink">Let’s talk <span class="btn-arrow" aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support -->
+        <section class="section support" id="support">
+            <div class="container">
+                <div class="support-card fade-in-up">
+                    <div class="support-art" aria-hidden="true">
+                        <svg viewBox="0 0 140 140">
+                            <path d="M38 54h52v26c0 14-11 24-26 24S38 94 38 80V54Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M90 62h8c8 0 13 6 13 13s-5 13-13 13h-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M56 40c4-5 4-10 0-15M70 40c4-5 4-10 0-15M84 40c4-5 4-10 0-15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/>
+                            <path class="cup-heart" d="M64 76c2-4 8-4 10 0 2-4 8-4 10 0 0 5-10 12-10 12s-10-7-10-12Z"/>
+                            <ellipse cx="64" cy="112" rx="38" ry="5" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".4"/>
+                            <path d="M16 22c3-4 7-5 11-4M12 33c4-2 8-2 11 0M116 20c3 2 5 5 5 9M124 31c2 2 3 4 3 7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".4"/>
+                        </svg>
+                    </div>
+
+                    <div class="support-copy">
+                        <p class="hand">a small kindness</p>
+                        <h2 class="section-title">Support my work</h2>
+                        <p>
+                            If something here made your day warmer, a coffee helps me keep making.
+                        </p>
+
+                        <div class="support-actions">
+                            <a class="support-btn" href="https://buymemomo.com/meandmycoffeetales" target="_blank" rel="noopener">
+                                <span aria-hidden="true">🥟</span> Buy me momo
+                            </a>
+                            <a class="support-btn" href="https://buymeacoffee.com/flgzgfniyv/2026-wishlist" target="_blank" rel="noopener">
+                                <span aria-hidden="true">🎁</span> 2026 wishlist
+                            </a>
+                            <a class="support-btn" href="https://www.buymeacoffee.com/FlGZgfnIYV" target="_blank" rel="noopener">
+                                <span aria-hidden="true">☕</span> Buy me a coffee
+                            </a>
+                        </div>
+
+                        <p class="support-thanks">thank you for being here. <span class="hand">really.</span></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Social Links -->
-        <section class="section social" id="social">
+        <!-- Hello -->
+        <section class="section hello" id="hello">
             <div class="container">
-                <div class="social-content fade-in-up">
-                    <h2>Let's Connect</h2>
-                    <p>Find me sharing thoughts, process, and small joys</p>
-                    
-                    <div class="social-links">
-                        <!-- EDIT: Replace # with your actual social links -->
-                        <a href="https://www.instagram.com/meandmycoffeetales/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                <div class="hello-card fade-in-up">
+                    <div class="hello-collage" aria-hidden="true">
+                        <div class="hello-tile hello-tile--pink">
+                            <svg viewBox="0 0 100 100">
+                                <path class="tile-wash" d="M16 30c11-7 23-7 34 0v44c-11-7-23-7-34 0V30Z"/>
+                                <path class="tile-line" d="M16 30c11-7 23-7 34 0v44c-11-7-23-7-34 0V30Z"/>
+                                <path class="tile-line" d="M50 30c11-7 23-7 34 0v44c-11-7-23-7-34 0"/>
+                                <path class="tile-heart" d="M36 46c1.5-3 6-3 7.5 0 1.5-3 6-3 7.5 0 0 4-7.5 9-7.5 9s-7.5-5-7.5-9Z"/>
+                                <path class="tile-line" d="M23 42h14M63 42h14M23 49h10M63 49h10" opacity=".45"/>
                             </svg>
-                            <span>Instagram</span>
+                        </div>
+                        <div class="hello-tile hello-tile--sage">
+                            <svg viewBox="0 0 100 100">
+                                <path class="tile-wash" d="M26 44h40v18c0 11-8 19-19 19h-2c-11 0-19-8-19-19V44Z"/>
+                                <path class="tile-line" d="M26 44h40v18c0 11-8 19-19 19h-2c-11 0-19-8-19-19V44Z"/>
+                                <path class="tile-line" d="M66 49h6c6 0 10 4 10 9s-4 9-10 9h-6"/>
+                                <path class="tile-line" d="M36 33c2-4 2-7 0-11M48 33c2-4 2-7 0-11M60 33c2-4 2-7 0-11" opacity=".5"/>
+                                <ellipse class="tile-line" cx="46" cy="86" rx="28" ry="3" opacity=".4"/>
+                            </svg>
+                        </div>
+                        <div class="hello-tile hello-tile--gold">
+                            <svg viewBox="0 0 100 100">
+                                <rect class="tile-wash" x="32" y="16" width="36" height="68" rx="6"/>
+                                <rect class="tile-line" x="32" y="16" width="36" height="68" rx="6"/>
+                                <path class="tile-line" d="M45 23h10"/>
+                                <path class="tile-heart" d="M42 46c2-4 7-4 9 0 2-4 7-4 9 0 0 5-9 11-9 11s-9-6-9-11Z"/>
+                                <path class="tile-line" d="M40 66h20" opacity=".5"/>
+                                <circle class="tile-heart" cx="50" cy="75" r="2.2"/>
+                            </svg>
+                        </div>
+                        <div class="hello-tile hello-tile--terra">
+                            <svg viewBox="0 0 100 100">
+                                <rect class="tile-wash" x="20" y="22" width="44" height="56" rx="3"/>
+                                <rect class="tile-line" x="20" y="22" width="44" height="56" rx="3"/>
+                                <path class="tile-line" d="M29 34h26M29 43h26M29 52h16"/>
+                                <path class="tile-line" d="m57 58 14-14 7 7-14 14-9 2 2-9Z"/>
+                                <path class="tile-heart" d="M36 62c1.5-3 5.5-3 7 0 1.5-3 5.5-3 7 0 0 3.5-7 8-7 8s-7-4.5-7-8Z"/>
+                            </svg>
+                        </div>
+                        <svg class="hello-wire" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path d="M4 26c18-18 34-14 44 4s26 20 48 4M4 76c18-14 31-9 41 6s28 9 51-6" fill="none" stroke="currentColor" stroke-width=".7" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                        </svg>
+                    </div>
+
+                    <div class="hello-copy">
+                        <p class="hand">the internet is nicer with friends</p>
+                        <h2 class="section-title">Let’s stay <em>connected</em></h2>
+                        <p class="hello-sub">Coffee, books, and small things.</p>
+                        <a class="btn btn-ink hello-link" href="https://www.instagram.com/meandmycoffeetales?dlrf=YWFlYmM1Z3hjM2Ji&amp;utm_source=qr" target="_blank" rel="noopener">
+                            <svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="17.4" cy="6.6" r="1" fill="currentColor"/>
+                            </svg>
+                            Find me on Instagram <span class="btn-arrow" aria-hidden="true">↗</span>
                         </a>
-                        
-                        <a href="https://www.youtube.com/@thedata_aiengineer" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
-                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
-                            </svg>
-                            <span>YouTube</span>
-                        </a>
-                        
-                        <!-- <a href="#" class="social-link" target="_blank" rel="noopener" aria-label="Pinterest">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <line x1="12" y1="8" x2="12" y2="21"/>
-                                <path d="M6 12a6 6 0 0 1 12 0c0 3-1.5 5-3 6.5"/>
-                                <circle cx="12" cy="12" r="9"/>
-                            </svg>
-                            <span>Pinterest</span>
-                        </a> -->
-                        
-                        <a href="https://sizaa.gumroad.com/?section=GKUhGsutJ4nKJTh2F849xA%3D%3D" class="social-link" target="_blank" rel="noopener" aria-label="Gumroad">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M6 6h15l-1.5 9h-12L6 6z"/>
-                                <circle cx="9" cy="20" r="1"/>
-                                <circle cx="18" cy="20" r="1"/>
-                                <path d="M6 6L5 3H2"/>
-                            </svg>
-                            <span>Gumroad</span>
-                        </a>
-                        
-                        <a href="mailto:thedataaiengineer17@gmail.com" class="social-link" aria-label="Email">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            <span>Email</span>
-                        </a>
+                        <p class="hello-handle">@meandmycoffeetales</p>
+                        <div class="hello-mini-links">
+                            <a class="hello-mini" href="https://substack.com/@thedataaiengineer" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M4 5h16M4 9h16M4 13h16M4 17l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Substack</span>
+                            </a>
+                            <a class="hello-mini" href="https://www.youtube.com/@thedata_aiengineer" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="m10 9 5 3-5 3V9Z" fill="currentColor"/>
+                                </svg>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -967,36 +839,27 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p class="footer-text">
-                Made with patience, coffee, and intention.<br>
-                Thank you for visiting my quiet corner of the internet. ☕
-            </p>
-            <p class="footer-year">© <span id="year"></span> Siza A. </p>
+        <div class="container footer-inner">
+            <a href="#home" class="footer-logo">cups <em>&amp;</em> chapters</a>
+            <p class="footer-quote">“good books, warm cups, honest work.”</p>
+            <ul class="footer-nav">
+                <li><a href="#about">about</a></li>
+                <li><a href="#corners">corners</a></li>
+                <li><a href="#setup">things</a></li>
+                <li><a href="#journey">journey</a></li>
+                <li><a href="#support">support</a></li>
+                <li><a href="#hello">hello</a></li>
+            </ul>
+            <p class="footer-copy">© <span id="year"></span> cups &amp; chapters · made with patience, coffee &amp; intention</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
             <path d="M18 15l-6-6-6 6"/>
         </svg>
     </button>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
-    <script
-    data-name="BMC-Widget"
-    data-cfasync="false"
-    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-    data-id="FlGZgfnIYV"
-    data-description="Support me on Buy me a coffee!"
-    data-message="If you'd like to support my work and future creations, I'd be grateful for a cup of coffee."
-    data-color="#5F7FFF"
-    data-position="Right"
-    data-x_margin="18"
-    data-y_margin="18">
-</script>
-
 </body>
 </html>

@@ -1,0 +1,11 @@
+# Personal waitlist data, never commit this to a public repo
+waitlist.csv
+waitlist-*.csv
+*.local.csv
+
+# Local secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
