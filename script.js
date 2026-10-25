@@ -55,19 +55,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeMobileMenu = () => {
         mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.setAttribute('aria-label', 'Open menu');
         navMenu.classList.remove('active');
+        document.body.classList.remove('nav-open');
         document.body.style.overflow = '';
     };
 
     mobileMenuToggle.addEventListener('click', () => {
         const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
         mobileMenuToggle.setAttribute('aria-expanded', String(!isExpanded));
+        mobileMenuToggle.setAttribute('aria-label', isExpanded ? 'Open menu' : 'Close menu');
         navMenu.classList.toggle('active');
+        document.body.classList.toggle('nav-open', !isExpanded);
         document.body.style.overflow = isExpanded ? '' : 'hidden';
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Tapping the dimmed area outside the menu closes it
+    document.addEventListener('click', event => {
+        if (!navMenu.classList.contains('active')) return;
+        if (navMenu.contains(event.target) || mobileMenuToggle.contains(event.target)) return;
+        closeMobileMenu();
     });
 
     // Close the menu if the viewport grows past the mobile breakpoint
@@ -159,7 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!target) return;
 
             event.preventDefault();
-            const headerOffset = 88;
+            const navHeight = parseInt(
+                getComputedStyle(document.documentElement).getPropertyValue('--nav-h'), 10
+            ) || 78;
+            const headerOffset = navHeight + 14;
             const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
 
             window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });

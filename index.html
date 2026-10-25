@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!-- SEO -->
     <title>Cups &amp; Chapters: Coffee, Books &amp; Slow-Made Things</title>
@@ -24,8 +24,21 @@
     <meta property="og:description" content="A quiet corner for coffee rituals, good books, slow making, and stories told honestly.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.sizaadhikari.com.np/">
+    <meta property="og:site_name" content="Cups &amp; Chapters">
     <meta property="og:image" content="https://www.sizaadhikari.com.np/assets/images/persona-reading.png">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://www.sizaadhikari.com.np/">
+
+    <!-- Tells Google the site's name, so results show "Cups & Chapters" rather than the domain -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Cups & Chapters",
+        "alternateName": "Cups and Chapters",
+        "url": "https://www.sizaadhikari.com.np/"
+    }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
@@ -37,7 +50,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="preload" as="image" href="assets/images/persona-reading.png">
+    <link rel="preload" as="image" href="assets/images/persona-reading.webp" type="image/webp" fetchpriority="high">
     <noscript><style>.fade-in-up{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
@@ -56,7 +69,7 @@
                 <span class="logo-text">cups <em>&amp;</em> chapters</span>
             </a>
 
-            <button class="mobile-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+            <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
                 <span class="hamburger"></span>
             </button>
 
@@ -147,15 +160,22 @@
                 </div>
 
                 <figure class="hero-sticker fade-in-up delay-2">
-                    <img src="assets/images/persona-reading.png"
-                         alt="An illustrated reader holding an open book and a cup of coffee"
-                         width="520" height="686"
-                         fetchpriority="high">
+                    <picture>
+                        <source srcset="assets/images/persona-reading.webp" type="image/webp">
+                        <img src="assets/images/persona-reading.png"
+                             alt="An illustrated reader holding an open book and a cup of coffee"
+                             width="520" height="686"
+                             fetchpriority="high">
+                    </picture>
                     <figcaption>me, probably reading</figcaption>
                 </figure>
 
                 <figure class="hero-sticker hero-sticker--coffee" aria-hidden="true">
-                    <img src="assets/images/espresso-stamp.png" alt="" width="451" height="600">
+                    <picture>
+                        <source srcset="assets/images/espresso-stamp.webp" type="image/webp">
+                        <img src="assets/images/espresso-stamp.png" alt="" width="451" height="600"
+                             loading="lazy" decoding="async">
+                    </picture>
                     <figcaption>espresso, please</figcaption>
                 </figure>
             </div>
