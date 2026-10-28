@@ -1175,15 +1175,6 @@ p { color: var(--ink-soft); }
 .form-status[data-state="pending"] { color: var(--muted); }
 .form-status[data-state="success"] { color: var(--sage-ink); }
 .form-status[data-state="error"] { color: var(--terracotta-deep); }
-.form-sink {
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    border: 0;
-    opacity: 0;
-    pointer-events: none;
-}
 .btn:disabled {
     cursor: wait;
     opacity: .65;

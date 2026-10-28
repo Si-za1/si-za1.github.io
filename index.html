@@ -316,12 +316,11 @@
                     <p>Leave your email and I’ll write when it opens.</p>
                 </div>
 
-                <!-- Formspree is the no-JavaScript fallback; script.js posts to Google first and retries here. -->
+                <!-- Formspree handles waitlist signups; script.js submits it without leaving the page. -->
                 <form class="newsletter-form" id="coffee-waitlist-form" action="https://formspree.io/f/xaeejvqg" method="POST">
                     <input type="hidden" name="_subject" value="My Coffee Tales waitlist">
                     <input type="hidden" name="interest" value="my-coffee-tales">
                     <input type="hidden" name="source" value="cups-and-chapters">
-                    <input type="hidden" name="token" id="coffee-waitlist-token" value="">
                     <div class="hp-field" aria-hidden="true">
                         <label for="coffee-waitlist-gotcha">Leave this field empty</label>
                         <input type="text" name="_gotcha" id="coffee-waitlist-gotcha" tabindex="-1" autocomplete="off">
@@ -334,7 +333,6 @@
                     <p class="form-note">One email when it’s ready. No spam.</p>
                     <p class="form-status" id="coffee-waitlist-status" role="status" aria-live="polite"></p>
                 </form>
-                <iframe class="form-sink" name="coffee-waitlist-sink" id="coffee-waitlist-sink" title="Waitlist submission" aria-hidden="true" tabindex="-1"></iframe>
             </div>
         </section>
 
