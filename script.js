@@ -81,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // The Google Web App went quiet (deployment access changed, outage, or a
         // slow cold start). Send the signup to Formspree instead of dropping it.
-        const submitWaitlistFallback = async (attemptToken) => {
+        const submitWaitlistFallback = async (attemptToken, attemptEmail) => {
             const formData = new FormData();
-            formData.append('email', waitlistEmailInput ? waitlistEmailInput.value.trim() : '');
+            formData.append('email', attemptEmail);
             formData.append('interest', 'my-coffee-tales');
             formData.append('source', 'cups-and-chapters');
             formData.append('_subject', 'My Coffee Tales waitlist');
@@ -116,6 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
             waitlistToken = createWaitlistToken();
             if (waitlistTokenInput) waitlistTokenInput.value = waitlistToken;
             const attemptToken = waitlistToken;
+            // Snapshot the email now; the visitor could edit it during the wait.
+            const attemptEmail = waitlistEmailInput ? waitlistEmailInput.value.trim() : '';
 
             waitlistPending = true;
             coffeeWaitlistForm.setAttribute('aria-busy', 'true');
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
                 setWaitlistStatus('Saving your spot another way…', 'pending');
-                submitWaitlistFallback(attemptToken);
+                submitWaitlistFallback(attemptToken, attemptEmail);
             }, 12000);
         });
 
