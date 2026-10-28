@@ -17,11 +17,15 @@ function doGet() {
     'My Coffee Tales waitlist',
     'This page receives waitlist signups. To join, use the form on the Cups and Chapters website.',
     'Go to the website',
-    SITE_URL
+    SITE_URL,
+    'info',
+    ''
   );
 }
 
 function doPost(e) {
+  const params = getParams_(e);
+  const token = sanitizeToken_(params.token);
   const lock = LockService.getScriptLock();
 
   if (!lock.tryLock(10000)) {
@@ -30,35 +34,40 @@ function doPost(e) {
       'One more try',
       'The list is a little busy right now. Please try again in a moment.',
       'Back to the waitlist',
-      WAITLIST_URL
+      WAITLIST_URL,
+      'error',
+      token
     );
   }
 
   try {
-    const params = getParams_(e);
-    const email = String(params.email || '').trim().toLowerCase();
-    const interest = String(params.interest || 'my-coffee-tales').trim();
-    const source = String(params.source || 'website').trim();
+    const rawEmail = String(params.email || '').trim().toLowerCase();
+    const interest = String(params.interest || 'my-coffee-tales').trim().slice(0, 80);
+    const source = String(params.source || 'website').trim().slice(0, 80);
     const gotcha = String(params._gotcha || '').trim();
 
     // A real visitor will never fill the hidden field.
     if (gotcha) {
       return successPage_(
         'You are on the list',
-        'Thank you for joining the My Coffee Tales waitlist.'
+        'Thank you for joining the My Coffee Tales waitlist.',
+        token
       );
     }
 
-    if (!isValidEmail_(email)) {
+    if (rawEmail.length > 254 || !isValidEmail_(rawEmail)) {
       return renderPage_(
         'One more try',
         'One more try',
         'That email address does not look quite right. Please go back and try again.',
         'Back to the waitlist',
-        WAITLIST_URL
+        WAITLIST_URL,
+        'error',
+        token
       );
     }
 
+    const email = rawEmail;
     const sheet = getSheet_();
     const alreadyOnList = hasEmail_(sheet, email);
 
@@ -70,13 +79,15 @@ function doPost(e) {
     if (alreadyOnList) {
       return successPage_(
         'You are already on the list',
-        'This email is already on the My Coffee Tales waitlist. I will write to you when the app is ready.'
+        'This email is already on the My Coffee Tales waitlist. I will write to you when the app is ready.',
+        token
       );
     }
 
     return successPage_(
       'You are on the list',
-      'Thank you for joining the My Coffee Tales waitlist. I will write to you when the app is ready.'
+      'Thank you for joining the My Coffee Tales waitlist. I will write to you when the app is ready.',
+      token
     );
   } catch (error) {
     return renderPage_(
@@ -84,7 +95,9 @@ function doPost(e) {
       'One more try',
       'Something went wrong while saving your email. Please try again in a little while.',
       'Back to the waitlist',
-      WAITLIST_URL
+      WAITLIST_URL,
+      'error',
+      token
     );
   } finally {
     lock.releaseLock();
@@ -163,17 +176,33 @@ function isValidEmail_(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 }
 
-function successPage_(heading, message) {
+function sanitizeToken_(value) {
+  return String(value || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 64);
+}
+
+function successPage_(heading, message, token) {
   return renderPage_(
     heading,
     heading,
     message,
     'Back to Cups and Chapters',
-    SITE_URL
+    SITE_URL,
+    'success',
+    token
   );
 }
 
-function renderPage_(title, heading, message, linkLabel, linkUrl) {
+function renderPage_(title, heading, message, linkLabel, linkUrl, status, token) {
+  // The hidden iframe on the site listens for this, so the visitor gets the
+  // result inline instead of being sent to this page. The token proves the
+  // message came from the form submission this page load created.
+  const payload = JSON.stringify({
+    source: 'coffee-waitlist',
+    token: token || '',
+    status: status || 'info',
+    message: message
+  });
+
   const html =
     '<!DOCTYPE html>' +
     '<html lang="en">' +
@@ -203,6 +232,9 @@ function renderPage_(title, heading, message, linkLabel, linkUrl) {
     '<p>' + message + '</p>' +
     '<a href="' + linkUrl + '">' + linkLabel + '</a>' +
     '</main>' +
+    '<script>' +
+    'try { window.top.postMessage(' + payload + ', "*"); } catch (error) {}' +
+    '</script>' +
     '</body>' +
     '</html>';
 

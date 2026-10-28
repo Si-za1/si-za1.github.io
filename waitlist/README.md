@@ -1,10 +1,14 @@
 # My Coffee Tales waitlist
 
-The site is hosted on GitHub Pages, which serves static files only. A page cannot write a CSV onto the server. The GitHub repository is also public, so waitlist emails must not be committed to it.
+The site is hosted on GitHub Pages, which serves static files only. A page cannot write a file onto the server, and this repository is public, so waitlist emails must never be committed to it.
 
-Instead, the form can send every signup to a private Google Sheet through a small Google Apps Script Web App. Each new email becomes a row in the sheet, and you can download the sheet as CSV whenever you need it.
+Instead, the form sends every signup to a private Google Sheet through a small Google Apps Script Web App. Each new email becomes a row in the sheet, and you can download the sheet as CSV or TSV (both plain text) whenever you need it.
 
-The form currently uses Formspree. It switches to the Google Sheet after you complete the setup below and add the Web App URL to `script.js`.
+The form uses Formspree as a no-JavaScript fallback. Once `COFFEE_WAITLIST_ENDPOINT` is filled in `script.js`, the form posts to the Google Web App instead.
+
+## What visitors see
+
+The form submits into a hidden iframe, so the page never navigates away and the visitor never sees Google's confirmation page or its links. The Apps Script page posts a short result back to the site with a per-page token, and the site shows it under the form (`Brewing…`, `You are on the list`, `You are already on the list`, or an error). If no reply arrives within 12 seconds, the form shows a retry message instead of pretending the signup worked.
 
 ## What gets stored
 
@@ -15,7 +19,17 @@ The script creates a `Waitlist` tab with these columns:
 - Interest
 - Source
 
-It ignores duplicate emails. The form also includes a hidden honeypot field to reduce spam.
+It ignores duplicate emails. The form also includes a hidden honeypot field to reduce spam, and the script caps the length of the stored values.
+
+## Why not save the emails in a .txt file?
+
+Because this is a static site, the only .txt file it could write is in the browser or in the repository:
+
+- A browser download lives on the visitor's computer, not yours.
+- A file committed to this public repository would expose every email address to anyone.
+- GitHub Pages has no server process to append to a file.
+
+The private Google Sheet is the secure equivalent: it appends one row per signup and is visible only to the Google account that owns it. Export it as `.csv` or `.tsv` from **File > Download** whenever you want a local copy; if you specifically want a `.txt`, download the TSV and rename it, since it is tab-separated plain text. The project's `.gitignore` already blocks `waitlist.csv` and similar files from being committed.
 
 ## One-time setup
 
@@ -37,35 +51,43 @@ It ignores duplicate emails. The form also includes a hidden honeypot field to r
    ```
 
 10. Save the file, then commit and deploy the site.
-11. Submit the form once with a real email and confirm that:
+11. Open the live site in a private/incognito window while signed out of Google. Submit a real email and confirm that:
+    - the page stays put and shows the inline success message, with no Google links
     - a new row appears in the `Waitlist` tab
     - the notification email arrives
-    - the thank-you page links back to the site
 
 If you already collected signups through Formspree, export them from the Formspree dashboard and paste them into the sheet once.
 
-## Download the list as CSV
+## Updating the script later
 
-In the Google Sheet, choose **File > Download > Comma-separated values (.csv)**.
+The site and the deployed Web App are separate. Changing `waitlist/google-apps-script.gs` does nothing until you paste it into the Apps Script editor, save it, and deploy a **new version**:
 
-The project includes a `.gitignore` rule for `waitlist.csv`, so a downloaded copy will not be committed by accident. Never commit the list to this public repository.
+1. Open **Deploy > Manage deployments**.
+2. Edit the Web App deployment.
+3. Set **Version** to **New version**.
+4. Confirm **Who has access** is still **Anyone**, then deploy.
 
-## If you want a hard switch
+Changing only the access setting keeps the old code version. Publishing a test deployment is not enough either; the live `/exec` URL must be used.
 
-The site changes the form action when the page loads, so JavaScript must be enabled. If you want the form to post to Google even with JavaScript disabled, replace the form `action` in `index.html` with the Web App URL as well.
+## Download the list
+
+In the Google Sheet, choose **File > Download > Comma-separated values (.csv)** or **Tab-separated values (.tsv)**. Do not commit the downloaded file.
 
 ## If something does not work
 
-- **No rows appear:** Confirm the deployment access is `Anyone` and the URL in `script.js` ends in `/exec`. If you edited the script, deploy a new version.
-- **The form goes to a Google sign-in page:** The deployment is still restricted. Open **Deploy > Manage deployments**, edit the Web App, set **Who has access** to `Anyone`, and deploy again. Publishing a test deployment is not enough. The live `/exec` URL must allow public access.
-- **The page says "Script function not found: doGet" or "doPost":** The deployed version does not contain the code. Confirm `google-apps-script.gs` is pasted into the project and saved. Then open **Deploy > Manage deployments**, edit the deployment, choose **Version: New version**, and deploy. Changing only the access setting keeps the old version, which may still be empty.
-- **The form still goes to Formspree:** `COFFEE_WAITLIST_ENDPOINT` is empty, or `script.js` did not load.
-- **No notification email:** Check the Gmail account used for the deployment and the spam folder. The signup is still saved in the sheet.
-- **Duplicate email:** The script does not add the same email twice. It shows an "already on the list" message.
-- **Two destinations:** Only one destination receives each submission. To send to both Formspree and the sheet, you would need a separate integration.
+- **Visitors see "You need permission", a Google sign-in page, or a Google Drive page with links:** the deployment is not public. Open **Deploy > Manage deployments**, edit the Web App, set **Who has access** to **Anyone**, and deploy again. Test in a signed-out/incognito window; being signed in as the owner can hide this problem.
+- **The form says "The waitlist couldn't confirm your signup":** the site could not complete the handshake. Confirm the deployed URL ends in `/exec`, the deployment access is `Anyone`, and the latest script version (the one that posts the result back) is deployed.
+- **No rows appear:** confirm the deployment access is `Anyone` and the URL in `script.js` ends in `/exec`. If you edited the script, deploy a new version.
+- **The page says "Script function not found: doGet" or "doPost":** the deployed version does not contain the code. Paste the script, save, then choose **Version: New version** and deploy.
+- **The form still goes to Formspree:** `COFFEE_WAITLIST_ENDPOINT` is empty, `script.js` did not load, or JavaScript is disabled. The Formspree fallback still stores the submission.
+- **No notification email:** check the Gmail account used for the deployment and the spam folder. The signup is still saved in the sheet.
+- **Duplicate email:** the script does not add the same email twice. It shows an "already on the list" message.
+- **No inline message, but a row was saved:** the deployed script is the older version that renders a page but does not post a result back. Paste the current `google-apps-script.gs` and deploy a new version.
 
-## Privacy
+## Privacy and security
 
 - Keep the Google Sheet private.
-- Do not commit a CSV export to the repository.
-- The Apps Script URL is public because the form must reach it. The script only accepts submissions and does not expose the sheet.
+- Do not commit a CSV or TXT export to the repository.
+- The Apps Script URL is public because the form must reach it. The script only accepts submissions and never returns sheet contents.
+- The result sent back to the page contains only a status and a short message, not the email address. The per-page token stops another page from faking a result.
+- Formspree is only the fallback when JavaScript is disabled or no Google endpoint is configured.

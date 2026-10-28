@@ -5,6 +5,8 @@
 
 // Paste the deployed Google Apps Script Web App URL here to send waitlist
 // signups to the private Google Sheet. Leave empty to keep using Formspree.
+// The Web App must be deployed with "Who has access: Anyone" and tested while
+// signed out of Google, or visitors will see a Google permission page.
 // Setup: waitlist/README.md
 const COFFEE_WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbybLTc0dJvgZL5pyVlMZBjCHNbs7jKFKQArijdRlWbTmjt6WpzP_lAfxYObM7G9fhWo/exec';
 
@@ -18,10 +20,85 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopBtn = document.getElementById('back-to-top');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Send the coffee waitlist to the Google Sheet once its Web App URL is set
-    const coffeeWaitlistForm = document.querySelector('#coffee-waitlist form');
+    // Send the coffee waitlist to the Google Sheet once its Web App URL is set.
+    // The form posts into a hidden iframe, so the visitor never leaves the page
+    // and never sees Google's confirmation page. The Apps Script replies with a
+    // postMessage carrying the same per-page token, which we use to show the result.
+    const coffeeWaitlistForm = document.getElementById('coffee-waitlist-form');
     if (coffeeWaitlistForm && COFFEE_WAITLIST_ENDPOINT.trim()) {
-        coffeeWaitlistForm.setAttribute('action', COFFEE_WAITLIST_ENDPOINT.trim());
+        const waitlistEndpoint = COFFEE_WAITLIST_ENDPOINT.trim();
+        const waitlistStatus = document.getElementById('coffee-waitlist-status');
+        const waitlistTokenInput = document.getElementById('coffee-waitlist-token');
+        const waitlistButton = coffeeWaitlistForm.querySelector('button[type="submit"]');
+        const waitlistButtonLabel = waitlistButton ? waitlistButton.textContent : 'Join the waitlist';
+        const waitlistToken = (window.crypto && typeof window.crypto.randomUUID === 'function')
+            ? window.crypto.randomUUID()
+            : Math.random().toString(36).slice(2) + Date.now().toString(36);
+        let waitlistPending = false;
+        let waitlistTimeout = null;
+
+        if (waitlistTokenInput) {
+            waitlistTokenInput.value = waitlistToken;
+            waitlistTokenInput.defaultValue = waitlistToken;
+        }
+
+        coffeeWaitlistForm.setAttribute('action', waitlistEndpoint);
+        coffeeWaitlistForm.setAttribute('target', 'coffee-waitlist-sink');
+
+        const setWaitlistStatus = (message, state) => {
+            if (!waitlistStatus) return;
+            waitlistStatus.textContent = message;
+            if (state) {
+                waitlistStatus.dataset.state = state;
+            } else {
+                delete waitlistStatus.dataset.state;
+            }
+        };
+
+        const finishWaitlist = (message, state) => {
+            clearTimeout(waitlistTimeout);
+            waitlistPending = false;
+            coffeeWaitlistForm.removeAttribute('aria-busy');
+            if (waitlistButton) {
+                waitlistButton.disabled = false;
+                waitlistButton.textContent = waitlistButtonLabel;
+            }
+            setWaitlistStatus(message, state);
+            if (state === 'success') {
+                coffeeWaitlistForm.reset();
+                if (waitlistTokenInput) waitlistTokenInput.value = waitlistToken;
+            }
+        };
+
+        coffeeWaitlistForm.addEventListener('submit', () => {
+            waitlistPending = true;
+            coffeeWaitlistForm.setAttribute('aria-busy', 'true');
+            if (waitlistButton) {
+                waitlistButton.disabled = true;
+                waitlistButton.textContent = 'Brewing…';
+            }
+            setWaitlistStatus('Brewing your spot…', 'pending');
+
+            clearTimeout(waitlistTimeout);
+            waitlistTimeout = setTimeout(() => {
+                if (!waitlistPending) return;
+                finishWaitlist(
+                    'The waitlist couldn’t confirm your signup. Please try again in a moment, or email thedataaiengineer17@gmail.com.',
+                    'error'
+                );
+            }, 12000);
+        });
+
+        window.addEventListener('message', event => {
+            const data = event.data;
+            if (!data || data.source !== 'coffee-waitlist') return;
+            if (data.token !== waitlistToken) return;
+            if (data.status === 'success') {
+                finishWaitlist(data.message || 'You’re on the list. I’ll write when it’s ready.', 'success');
+            } else if (data.status === 'error') {
+                finishWaitlist(data.message || 'Something went wrong. Please try again.', 'error');
+            }
+        });
     }
 
     // ==========================================

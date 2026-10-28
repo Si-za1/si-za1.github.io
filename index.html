@@ -317,21 +317,24 @@
                 </div>
 
                 <!-- Keeps working through Formspree until the Google Sheet endpoint is set in script.js. -->
-                <form class="newsletter-form" action="https://formspree.io/f/xqedvvrk" method="POST">
+                <form class="newsletter-form" id="coffee-waitlist-form" action="https://formspree.io/f/xqedvvrk" method="POST">
                     <input type="hidden" name="_subject" value="My Coffee Tales waitlist">
                     <input type="hidden" name="interest" value="my-coffee-tales">
                     <input type="hidden" name="source" value="cups-and-chapters">
+                    <input type="hidden" name="token" id="coffee-waitlist-token" value="">
                     <div class="hp-field" aria-hidden="true">
                         <label for="coffee-waitlist-gotcha">Leave this field empty</label>
                         <input type="text" name="_gotcha" id="coffee-waitlist-gotcha" tabindex="-1" autocomplete="off">
                     </div>
                     <div class="form-row">
                         <label class="sr-only" for="coffee-waitlist-email">Email address</label>
-                        <input type="email" name="email" id="coffee-waitlist-email" placeholder="your@email.com" required autocomplete="email" class="newsletter-input">
+                        <input type="email" name="email" id="coffee-waitlist-email" placeholder="your@email.com" required autocomplete="email" maxlength="254" class="newsletter-input">
                         <button type="submit" class="btn btn-ink">Join the waitlist</button>
                     </div>
                     <p class="form-note">One email when it’s ready. No spam.</p>
+                    <p class="form-status" id="coffee-waitlist-status" role="status" aria-live="polite"></p>
                 </form>
+                <iframe class="form-sink" name="coffee-waitlist-sink" id="coffee-waitlist-sink" title="Waitlist submission" aria-hidden="true" tabindex="-1"></iframe>
             </div>
         </section>
 

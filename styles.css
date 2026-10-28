@@ -188,7 +188,7 @@ p { color: var(--ink-soft); }
     padding-right: calc(clamp(1.25rem, 4vw, 2.5rem) + var(--safe-right));
 }
 
-.section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
+.section { padding: clamp(3.75rem, 6vw, 5.5rem) 0; position: relative; }
 
 .sr-only {
     position: absolute !important;
@@ -483,13 +483,13 @@ p { color: var(--ink-soft); }
 .hero {
     position: relative;
     overflow: hidden;
-    padding: clamp(7.5rem, 11vw, 9.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+    padding: clamp(6.5rem, 8vw, 7.5rem) 0 clamp(2.25rem, 4vw, 3.25rem);
 }
 .hero-min {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    min-height: clamp(600px, 72vh, 720px);
+    min-height: clamp(540px, 60vh, 620px);
     margin: 0 auto;
     padding-left: calc(clamp(1.25rem, 4vw, 2.5rem) + var(--safe-left));
     padding-right: calc(clamp(1.25rem, 4vw, 2.5rem) + var(--safe-right));
@@ -589,10 +589,11 @@ p { color: var(--ink-soft); }
     line-height: 1;
     color: var(--muted);
 }
-.hero-doodle--coffee { top: 9%; left: 8%; rotate: -4deg; }
-.hero-doodle--books { bottom: 7%; left: 9%; rotate: 3deg; }
-.hero-doodle--plant { top: 9%; right: 8%; rotate: 4deg; }
-.hero-doodle--mail { bottom: 8%; right: 9%; rotate: -3deg; }
+.hero-doodle--coffee { top: 3%; left: 8%; rotate: -4deg; }
+/* Kept above the walking sticker so both stay visible */
+.hero-doodle--books { top: 22%; left: 9%; rotate: 3deg; }
+.hero-doodle--plant { top: 3%; right: 8%; rotate: 4deg; }
+.hero-doodle--mail { bottom: 6%; right: 9%; rotate: -3deg; }
 
 .hero-sticker {
     --sticker-outline:
@@ -630,10 +631,10 @@ p { color: var(--ink-soft); }
     white-space: nowrap;
 }
 .hero-sticker--coffee {
-    top: 38%;
+    top: 32%;
     left: auto;
     right: 3.5%;
-    width: clamp(125px, 12vw, 160px);
+    width: clamp(125px, 10vw, 150px);
     rotate: 4deg;
 }
 .hero-sticker--coffee img {
@@ -670,7 +671,7 @@ p { color: var(--ink-soft); }
 /* ============================================================
    CORNERS / BOOKSHELF
    ============================================================ */
-.corners { padding-bottom: clamp(5rem, 9vw, 8rem); }
+.corners { padding-bottom: clamp(3.25rem, 5vw, 4.5rem); }
 
 .shelf { position: relative; padding-bottom: 14px; }
 .books {
@@ -1140,6 +1141,10 @@ p { color: var(--ink-soft); }
     max-width: 42ch;
 }
 .form-row { display: flex; gap: .7rem; }
+.newsletter-form .btn {
+    min-width: 190px;
+    justify-content: center;
+}
 .newsletter-input {
     flex: 1;
     min-width: 0;
@@ -1159,6 +1164,31 @@ p { color: var(--ink-soft); }
     font-size: .7rem;
     letter-spacing: .015em;
     color: var(--muted);
+}
+.form-status {
+    margin-top: .55rem;
+    font-size: .82rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+.form-status:empty { display: none; }
+.form-status[data-state="pending"] { color: var(--muted); }
+.form-status[data-state="success"] { color: var(--sage-ink); }
+.form-status[data-state="error"] { color: var(--terracotta-deep); }
+.form-sink {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+.btn:disabled {
+    cursor: wait;
+    opacity: .65;
+    transform: none;
+    box-shadow: 3px 3px 0 var(--terracotta);
 }
 
 /* ============================================================
@@ -1273,6 +1303,8 @@ p { color: var(--ink-soft); }
     color: var(--cream);
     border-top: 1px solid rgba(247, 241, 228, .08);
     border-bottom: 1px solid rgba(247, 241, 228, .08);
+    padding-top: clamp(3.25rem, 5vw, 4.75rem);
+    padding-bottom: clamp(3rem, 5vw, 4.25rem);
 }
 .journey .section-title { color: var(--cream); }
 .journey .section-title em { color: #E9A178; }
@@ -1378,11 +1410,11 @@ p { color: var(--ink-soft); }
 }
 .skill-list li {
     padding: .38rem .85rem;
-    border: 1px solid rgba(247, 241, 228, .2);
+    border: 1px solid rgba(247, 241, 228, .32);
     border-radius: 999px;
     font-size: .66rem;
     letter-spacing: .06em;
-    color: rgba(247, 241, 228, .72);
+    color: rgba(247, 241, 228, .88);
     transition: border-color .2s ease, color .2s ease;
 }
 .skill-list li:hover { border-color: #E9A178; color: var(--cream); }
@@ -1390,6 +1422,8 @@ p { color: var(--ink-soft); }
 /* ============================================================
    COLLABORATE
    ============================================================ */
+.collaborate { padding-top: clamp(3.25rem, 5vw, 4.75rem); }
+
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1603,7 +1637,7 @@ p { color: var(--ink-soft); }
    ============================================================ */
 .setup {
     background: var(--paper);
-    padding-bottom: clamp(3.5rem, 6vw, 5rem);
+    padding-bottom: clamp(2.5rem, 4vw, 3.25rem);
 }
 
 .arsenal {
@@ -1774,6 +1808,16 @@ p { color: var(--ink-soft); }
     pointer-events: none;
     z-index: 2;
 }
+
+/* The paper collage keeps its colours in dark mode, just muted to match the room */
+[data-theme="dark"] .hello-tile--pink { background: #3A2721; }
+[data-theme="dark"] .hello-tile--sage { background: #27301F; }
+[data-theme="dark"] .hello-tile--gold { background: #332A1B; }
+[data-theme="dark"] .hello-tile--terra { background: #3B241B; }
+[data-theme="dark"] .hello-tile .tile-line { stroke: #F1E7D8; }
+[data-theme="dark"] .hello-tile .tile-wash { fill: #F1E7D8; opacity: .06; }
+[data-theme="dark"] .hello-tile .tile-heart { fill: #E9A178; }
+[data-theme="dark"] .hello-wire { color: #E9A178; opacity: .35; }
 .hello-copy .hand { margin-bottom: .65rem; }
 .hello-copy .section-title {
     font-size: clamp(2rem, 3.5vw, 3rem);
@@ -2040,8 +2084,8 @@ p { color: var(--ink-soft); }
 
 @media (max-width: 760px) {
     :root { --nav-h: 70px; }
-    .section { padding: clamp(3.5rem, 10vw, 5.5rem) 0; }
-    .hero { padding-top: 7rem; }
+    .section { padding: clamp(3rem, 8vw, 4.25rem) 0; }
+    .hero { padding-top: 6.5rem; }
     .hero-title { font-size: clamp(1.9rem, 7.5vw, 2.5rem); }
     .hero-lede { font-size: .92rem; }
     .hero-hello { font-size: 1.1rem; }
