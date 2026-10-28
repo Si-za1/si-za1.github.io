@@ -316,8 +316,8 @@
                     <p>Leave your email and I’ll write when it opens.</p>
                 </div>
 
-                <!-- Keeps working through Formspree until the Google Sheet endpoint is set in script.js. -->
-                <form class="newsletter-form" id="coffee-waitlist-form" action="https://formspree.io/f/xqedvvrk" method="POST">
+                <!-- Formspree is the no-JavaScript fallback; script.js posts to Google first and retries here. -->
+                <form class="newsletter-form" id="coffee-waitlist-form" action="https://formspree.io/f/xaeejvqg" method="POST">
                     <input type="hidden" name="_subject" value="My Coffee Tales waitlist">
                     <input type="hidden" name="interest" value="my-coffee-tales">
                     <input type="hidden" name="source" value="cups-and-chapters">

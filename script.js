@@ -10,6 +10,10 @@
 // Setup: waitlist/README.md
 const COFFEE_WAITLIST_ENDPOINT = 'https://script.google.com/macros/s/AKfycbybLTc0dJvgZL5pyVlMZBjCHNbs7jKFKQArijdRlWbTmjt6WpzP_lAfxYObM7G9fhWo/exec';
 
+// If the Google Web App does not answer, the form retries here so a signup is
+// never lost. This is the same form as the no-JavaScript fallback in index.html.
+const COFFEE_WAITLIST_FALLBACK_ENDPOINT = 'https://formspree.io/f/xaeejvqg';
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const html = document.documentElement;
@@ -23,17 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Send the coffee waitlist to the Google Sheet once its Web App URL is set.
     // The form posts into a hidden iframe, so the visitor never leaves the page
     // and never sees Google's confirmation page. The Apps Script replies with a
-    // postMessage carrying the same per-page token, which we use to show the result.
+    // postMessage carrying the same per-submission token, which we use to show
+    // the result.
     const coffeeWaitlistForm = document.getElementById('coffee-waitlist-form');
     if (coffeeWaitlistForm && COFFEE_WAITLIST_ENDPOINT.trim()) {
         const waitlistEndpoint = COFFEE_WAITLIST_ENDPOINT.trim();
+        const waitlistFallbackEndpoint = COFFEE_WAITLIST_FALLBACK_ENDPOINT.trim();
         const waitlistStatus = document.getElementById('coffee-waitlist-status');
         const waitlistTokenInput = document.getElementById('coffee-waitlist-token');
+        const waitlistEmailInput = document.getElementById('coffee-waitlist-email');
         const waitlistButton = coffeeWaitlistForm.querySelector('button[type="submit"]');
         const waitlistButtonLabel = waitlistButton ? waitlistButton.textContent : 'Join the waitlist';
-        const waitlistToken = (window.crypto && typeof window.crypto.randomUUID === 'function')
+        const waitlistErrorMessage = 'The waitlist couldn’t confirm your signup. Please try again in a moment, or email thedataaiengineer17@gmail.com.';
+        const createWaitlistToken = () => (window.crypto && typeof window.crypto.randomUUID === 'function')
             ? window.crypto.randomUUID()
             : Math.random().toString(36).slice(2) + Date.now().toString(36);
+        let waitlistToken = createWaitlistToken();
         let waitlistPending = false;
         let waitlistTimeout = null;
 
@@ -70,7 +79,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        // The Google Web App went quiet (deployment access changed, outage, or a
+        // slow cold start). Send the signup to Formspree instead of dropping it.
+        const submitWaitlistFallback = async (attemptToken) => {
+            const formData = new FormData();
+            formData.append('email', waitlistEmailInput ? waitlistEmailInput.value.trim() : '');
+            formData.append('interest', 'my-coffee-tales');
+            formData.append('source', 'cups-and-chapters');
+            formData.append('_subject', 'My Coffee Tales waitlist');
+
+            const controller = new AbortController();
+            const abortTimer = setTimeout(() => controller.abort(), 10000);
+
+            try {
+                const response = await fetch(waitlistFallbackEndpoint, {
+                    method: 'POST',
+                    headers: { Accept: 'application/json' },
+                    body: formData,
+                    signal: controller.signal
+                });
+                clearTimeout(abortTimer);
+                if (!response.ok) throw new Error('Formspree responded ' + response.status);
+                // A newer submission started while this request was in flight.
+                if (attemptToken !== waitlistToken) return;
+                finishWaitlist('You’re on the list. I’ll write when it’s ready.', 'success');
+            } catch (error) {
+                clearTimeout(abortTimer);
+                if (!waitlistPending || attemptToken !== waitlistToken) return;
+                finishWaitlist(waitlistErrorMessage, 'error');
+            }
+        };
+
         coffeeWaitlistForm.addEventListener('submit', () => {
+            // Fresh token per submission, so a late reply from an earlier attempt
+            // cannot finish the wrong submission.
+            waitlistToken = createWaitlistToken();
+            if (waitlistTokenInput) waitlistTokenInput.value = waitlistToken;
+            const attemptToken = waitlistToken;
+
             waitlistPending = true;
             coffeeWaitlistForm.setAttribute('aria-busy', 'true');
             if (waitlistButton) {
@@ -82,16 +128,20 @@ document.addEventListener('DOMContentLoaded', () => {
             clearTimeout(waitlistTimeout);
             waitlistTimeout = setTimeout(() => {
                 if (!waitlistPending) return;
-                finishWaitlist(
-                    'The waitlist couldn’t confirm your signup. Please try again in a moment, or email thedataaiengineer17@gmail.com.',
-                    'error'
-                );
+                if (!waitlistFallbackEndpoint) {
+                    finishWaitlist(waitlistErrorMessage, 'error');
+                    return;
+                }
+                setWaitlistStatus('Saving your spot another way…', 'pending');
+                submitWaitlistFallback(attemptToken);
             }, 12000);
         });
 
         window.addEventListener('message', event => {
             const data = event.data;
             if (!data || data.source !== 'coffee-waitlist') return;
+            // Ignore replies that arrive after this submission already finished.
+            if (!waitlistPending) return;
             if (data.token !== waitlistToken) return;
             if (data.status === 'success') {
                 finishWaitlist(data.message || 'You’re on the list. I’ll write when it’s ready.', 'success');

@@ -4,11 +4,11 @@ The site is hosted on GitHub Pages, which serves static files only. A page canno
 
 Instead, the form sends every signup to a private Google Sheet through a small Google Apps Script Web App. Each new email becomes a row in the sheet, and you can download the sheet as CSV or TSV (both plain text) whenever you need it.
 
-The form uses Formspree as a no-JavaScript fallback. Once `COFFEE_WAITLIST_ENDPOINT` is filled in `script.js`, the form posts to the Google Web App instead.
+The form uses Formspree (`https://formspree.io/f/xaeejvqg`) as its no-JavaScript fallback. Once `COFFEE_WAITLIST_ENDPOINT` is filled in `script.js`, the form posts to the Google Web App first, and retries through Formspree automatically if Google does not answer within 12 seconds.
 
 ## What visitors see
 
-The form submits into a hidden iframe, so the page never navigates away and the visitor never sees Google's confirmation page or its links. The Apps Script page posts a short result back to the site with a per-page token, and the site shows it under the form (`Brewing…`, `You are on the list`, `You are already on the list`, or an error). If no reply arrives within 12 seconds, the form shows a retry message instead of pretending the signup worked.
+The form submits into a hidden iframe, so the page never navigates away and the visitor never sees Google's confirmation page or its links. The Apps Script page posts a short result back to the site with a per-submission token, and the site shows it under the form (`Brewing…`, `You are on the list`, `You are already on the list`, or an error). If no reply arrives within 12 seconds, the site retries the same signup through Formspree (`Saving your spot another way…`) and shows success if that works. Only if both routes fail does it show the retry message.
 
 ## What gets stored
 
@@ -20,6 +20,10 @@ The script creates a `Waitlist` tab with these columns:
 - Source
 
 It ignores duplicate emails. The form also includes a hidden honeypot field to reduce spam, and the script caps the length of the stored values.
+
+## Formspree fallback
+
+If the Google Web App does not answer within 12 seconds, the page posts the signup to the Formspree form at `https://formspree.io/f/xaeejvqg` instead, so a Google outage does not lose the email. Those fallback submissions appear in the Formspree dashboard, not in the Google Sheet. The free Formspree plan allows 50 submissions per month; in normal operation none are used because Google answers first.
 
 ## Why not save the emails in a .txt file?
 
@@ -76,7 +80,7 @@ In the Google Sheet, choose **File > Download > Comma-separated values (.csv)** 
 ## If something does not work
 
 - **Visitors see "You need permission", a Google sign-in page, or a Google Drive page with links:** the deployment is not public. Open **Deploy > Manage deployments**, edit the Web App, set **Who has access** to **Anyone**, and deploy again. Test in a signed-out/incognito window; being signed in as the owner can hide this problem.
-- **The form says "The waitlist couldn't confirm your signup":** the site could not complete the handshake. Confirm the deployed URL ends in `/exec`, the deployment access is `Anyone`, and the latest script version (the one that posts the result back) is deployed.
+- **The form says "The waitlist couldn't confirm your signup":** both the Google Web App and the Formspree fallback failed. Check the visitor's connection or ad blocker, confirm the Formspree form is active, then confirm the deployed URL ends in `/exec`, the deployment access is `Anyone`, and the latest script version (the one that posts the result back) is deployed.
 - **No rows appear:** confirm the deployment access is `Anyone` and the URL in `script.js` ends in `/exec`. If you edited the script, deploy a new version.
 - **The page says "Script function not found: doGet" or "doPost":** the deployed version does not contain the code. Paste the script, save, then choose **Version: New version** and deploy.
 - **The form still goes to Formspree:** `COFFEE_WAITLIST_ENDPOINT` is empty, `script.js` did not load, or JavaScript is disabled. The Formspree fallback still stores the submission.
