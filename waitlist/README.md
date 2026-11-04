@@ -1,6 +1,6 @@
 # My Coffee Tales waitlist
 
-The site is hosted on GitHub Pages, which serves static files only, so the waitlist uses [Formspree](https://formspree.io) to receive signups.
+The site is hosted on GitHub Pages, which serves static files only, so the waitlist uses [Formspree](https://formspree.io) to receive signups. 
 
 - **Form URL:** `https://formspree.io/f/xaeejvqg`
 - **Where signups go:** the Formspree dashboard for the account that owns the form.
