@@ -18,7 +18,7 @@ The form includes `_subject`, `interest`, and `source` hidden fields plus a `_go
 
 Update both places so the JavaScript and no-JavaScript paths use the same form:
 
-1. `action` on `#coffee-waitlist-form` in `index.html`
+1. `action` on `#coffee-waitlist-form` in `index.html` and `links/index.html`
 2. `COFFEE_WAITLIST_ENDPOINT` in `script.js`
 
 ## Exporting signups

@@ -24,7 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const waitlistEndpoint = COFFEE_WAITLIST_ENDPOINT.trim();
         const waitlistStatus = document.getElementById('coffee-waitlist-status');
         const waitlistButton = coffeeWaitlistForm.querySelector('button[type="submit"]');
-        const waitlistButtonLabel = waitlistButton ? waitlistButton.textContent : 'Join the waitlist';
+        // Keycap buttons keep their label in an inner span, so update that
+        // instead of replacing the button's whole content.
+        const waitlistButtonLabelNode = waitlistButton
+            ? waitlistButton.querySelector('.keycap-label') || waitlistButton
+            : null;
+        const waitlistButtonLabel = waitlistButtonLabelNode ? waitlistButtonLabelNode.textContent : 'Join the waitlist';
+        const setWaitlistButtonLabel = label => {
+            if (waitlistButtonLabelNode) waitlistButtonLabelNode.textContent = label;
+        };
         const waitlistErrorMessage = 'The waitlist couldn’t confirm your signup. Please try again in a moment, or email thedataaiengineer17@gmail.com.';
         let waitlistPending = false;
 
@@ -45,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
             coffeeWaitlistForm.removeAttribute('aria-busy');
             if (waitlistButton) {
                 waitlistButton.disabled = false;
-                waitlistButton.textContent = waitlistButtonLabel;
             }
+            setWaitlistButtonLabel(waitlistButtonLabel);
             setWaitlistStatus(message, state);
             if (state === 'success') coffeeWaitlistForm.reset();
         };
@@ -59,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
             coffeeWaitlistForm.setAttribute('aria-busy', 'true');
             if (waitlistButton) {
                 waitlistButton.disabled = true;
-                waitlistButton.textContent = 'Brewing…';
             }
+            setWaitlistButtonLabel('Brewing…');
             setWaitlistStatus('Brewing your spot…', 'pending');
 
             const controller = new AbortController();

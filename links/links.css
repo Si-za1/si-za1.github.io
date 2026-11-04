@@ -1,0 +1,428 @@
+/* ============================================================
+   LINKS PAGE: a small, quiet gallery of everything I make
+   Builds on the tokens and shared components in ../styles.css
+   ============================================================ */
+
+.links-page {
+    padding-top: .35rem;
+    padding-bottom: 0;
+}
+
+.links-shell {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+/* ---------- Minimal header on this page ---------- */
+.links-body .navbar {
+    position: static;
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border: 0;
+    box-shadow: none;
+}
+.links-body .navbar.scrolled {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+.links-body .nav-container {
+    height: calc(64px + var(--safe-top));
+    padding-top: var(--safe-top);
+}
+.links-body .nav-links,
+.links-body .mobile-menu-toggle { display: none; }
+@media (max-width: 980px) {
+    .links-body .nav-menu {
+        position: static;
+        z-index: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 0;
+        width: auto;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        transform: none;
+        visibility: visible;
+        overflow: visible;
+        transition: none;
+    }
+    .links-body .nav-menu .theme-toggle {
+        margin-top: 0;
+        align-self: center;
+    }
+}
+
+/* ---------- Back home key ---------- */
+.links-home-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: .4rem;
+}
+
+/* ---------- Keycap buttons ---------- */
+.keycap {
+    --key-face: var(--paper-3);
+    --key-face-deep: var(--paper-2);
+    --key-base: var(--sage);
+    --key-base-dark: var(--forest);
+    --key-ink: var(--ink);
+    position: relative;
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 12px;
+    background: var(--key-base);
+    color: var(--key-ink);
+    box-shadow:
+        0 4px 0 var(--key-base-dark),
+        0 10px 16px -12px rgba(47, 74, 59, .55);
+    transition: translate .16s var(--ease-soft), box-shadow .16s var(--ease-soft);
+}
+.keycap-face {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .05rem;
+    padding: .58rem .95rem;
+    border-radius: 8px;
+    background: linear-gradient(180deg, var(--key-face), var(--key-face-deep));
+    box-shadow:
+        inset 0 1.5px 0 rgba(255, 255, 255, .7),
+        inset 0 -1.5px 0 rgba(47, 74, 59, .08),
+        inset 0 0 0 1px rgba(47, 74, 59, .08);
+}
+.keycap-label {
+    font-family: var(--font-body);
+    font-size: .72rem;
+    font-weight: 500;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--key-ink);
+    white-space: nowrap;
+}
+.keycap:hover {
+    translate: 0 1.5px;
+    box-shadow:
+        0 2.5px 0 var(--key-base-dark),
+        0 7px 12px -10px rgba(47, 74, 59, .5);
+}
+.keycap:active {
+    translate: 0 4px;
+    box-shadow:
+        0 0 0 var(--key-base-dark),
+        0 4px 8px -8px rgba(47, 74, 59, .4);
+}
+.keycap:disabled {
+    cursor: wait;
+    opacity: .72;
+    translate: 0 2px;
+    box-shadow:
+        0 2px 0 var(--key-base-dark),
+        0 6px 10px -10px rgba(47, 74, 59, .4);
+}
+
+/* the return key */
+.keycap--return .keycap-face {
+    position: relative;
+    min-width: 92px;
+    min-height: 36px;
+    padding: .5rem .8rem .46rem;
+}
+.keycap--return .keycap-label {
+    font-size: .64rem;
+    letter-spacing: .1em;
+}
+.keycap-glyph {
+    position: absolute;
+    right: .55rem;
+    bottom: .26rem;
+    font-size: .75rem;
+    line-height: 1;
+    color: var(--key-ink);
+}
+
+/* the waitlist key */
+.keycap--submit {
+    --key-face: var(--ink);
+    --key-face-deep: var(--ink);
+    --key-base: var(--terracotta);
+    --key-base-dark: #8B3F1D;
+    --key-ink: var(--paper);
+    flex: none;
+    min-width: 168px;
+}
+.keycap--submit .keycap-face { padding: .82rem 1.15rem; }
+
+/* ---------- Waitlist, first and quiet ---------- */
+.links-waitlist {
+    padding: clamp(.75rem, 2vw, 1.1rem) 0 clamp(1.75rem, 4vw, 2.5rem);
+    text-align: center;
+}
+.links-waitlist h1 {
+    font-size: clamp(1.9rem, 4.2vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    margin-bottom: .45rem;
+}
+.links-waitlist-sub {
+    max-width: 46ch;
+    margin: 0 auto;
+    font-size: .92rem;
+    line-height: 1.7;
+    color: var(--muted);
+    text-wrap: balance;
+}
+.links-waitlist .newsletter-form {
+    max-width: 450px;
+    margin: 1.2rem auto 0;
+    text-align: left;
+}
+.links-waitlist .form-row { align-items: center; }
+.links-waitlist .form-note,
+.links-waitlist .form-status { text-align: center; }
+
+/* ---------- The gallery ---------- */
+.links-grid-note {
+    margin: 0 0 clamp(1rem, 2vw, 1.4rem);
+    text-align: center;
+    font-family: var(--font-hand);
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    line-height: 1.2;
+    color: var(--terracotta-deep);
+    rotate: -1.5deg;
+}
+
+.folder-grid {
+    --folder-gap: clamp(1.35rem, 2.8vw, 2rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(1.6rem, 3vw, 2.2rem) var(--folder-gap);
+}
+.folder-grid > li {
+    width: calc((100% - 3 * var(--folder-gap)) / 4);
+    min-width: 0;
+}
+
+.folder-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.folder-art {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.24 / 1;
+    margin-bottom: .7rem;
+    filter: drop-shadow(0 10px 14px rgba(54, 39, 24, .1));
+    transition: translate .3s var(--ease-soft);
+}
+.folder-card:hover .folder-art { translate: 0 -4px; }
+
+/* the open back of the folder, with a little tab */
+.folder-art::before {
+    content: "";
+    position: absolute;
+    inset: 24% 0 0 0;
+    background: var(--folder-back);
+    border-radius: 9px 9px 7px 7px;
+}
+.folder-art::after {
+    content: "";
+    position: absolute;
+    top: 13%;
+    left: 0;
+    width: 37%;
+    height: 15%;
+    background: var(--folder-back);
+    border-radius: 8px 8px 0 0;
+}
+
+/* two little photo prints peeking out */
+.folder-photo {
+    position: absolute;
+    z-index: 1;
+    padding: 3px;
+    background: var(--folder-paper);
+    border-radius: 5px;
+    box-shadow:
+        0 0 0 1px rgba(33, 29, 24, .05),
+        0 6px 12px -7px rgba(54, 39, 24, .5);
+    overflow: hidden;
+    transition: rotate .3s var(--ease-soft), translate .3s var(--ease-soft);
+}
+.folder-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    object-fit: cover;
+    object-position: center 32%;
+}
+.folder-photo--back {
+    top: 8%;
+    left: 36%;
+    width: 47%;
+    height: 63%;
+    translate: -50% 0;
+    rotate: -9deg;
+}
+.folder-photo--front {
+    top: 2%;
+    left: 63%;
+    z-index: 2;
+    width: 51%;
+    height: 67%;
+    translate: -50% 0;
+    rotate: 6deg;
+}
+.folder-card:hover .folder-photo--back {
+    rotate: -12deg;
+    translate: -50% -2px;
+}
+.folder-card:hover .folder-photo--front {
+    rotate: 9deg;
+    translate: -50% -5px;
+}
+
+/* the front pocket */
+.folder-front {
+    position: absolute;
+    inset: auto 0 0 0;
+    z-index: 3;
+    height: 54%;
+    background: var(--folder-front);
+    border-radius: 8px;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .35),
+        0 -8px 18px -14px rgba(54, 39, 24, .5);
+}
+
+.folder-label {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.2;
+    text-wrap: balance;
+    color: var(--ink);
+    transition: color .2s ease;
+}
+.folder-card:hover .folder-label { color: var(--terracotta-deep); }
+
+/* ---------- Folder colors ---------- */
+.folder-card--sage {
+    --folder-front: #B7C7AE;
+    --folder-back: #98AC8D;
+    --folder-ink: #4E6346;
+}
+.folder-card--pink {
+    --folder-front: #F3CFC6;
+    --folder-back: #E3AB9F;
+    --folder-ink: #A34F23;
+}
+.folder-card--peach {
+    --folder-front: #F4C99E;
+    --folder-back: #E3AB77;
+    --folder-ink: #8A5320;
+}
+.folder-card--gold {
+    --folder-front: #F1D9A2;
+    --folder-back: #E2C37F;
+    --folder-ink: #83601F;
+}
+.folder-card--lilac {
+    --folder-front: #E5C9E5;
+    --folder-back: #D2ABD4;
+    --folder-ink: #734875;
+}
+.folder-card--sky {
+    --folder-front: #BCD9E6;
+    --folder-back: #97BECD;
+    --folder-ink: #3F6473;
+}
+.folder-card { --folder-paper: #FBF7EE; }
+
+/* ---------- Footer ---------- */
+.links-footer {
+    padding: clamp(2rem, 4vw, 3rem)
+             calc(clamp(1.25rem, 4vw, 2.5rem) + var(--safe-right))
+             calc(2.25rem + var(--safe-bottom))
+             calc(clamp(1.25rem, 4vw, 2.5rem) + var(--safe-left));
+    text-align: center;
+    background: transparent;
+}
+.links-footer-logo {
+    display: inline-block;
+    font-family: var(--font-hand);
+    font-size: 1.45rem;
+    color: var(--ink);
+}
+.links-footer-logo em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--terracotta-deep);
+}
+.links-footer-copy {
+    margin-top: .55rem;
+    font-size: .6rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    line-height: 1.7;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .folder-grid > li {
+        width: calc((100% - 2 * var(--folder-gap)) / 3);
+    }
+}
+
+@media (max-width: 760px) {
+    .links-body .nav-container { height: calc(60px + var(--safe-top)); }
+    .links-waitlist { padding-top: .65rem; padding-bottom: 1.75rem; }
+    .links-waitlist .newsletter-form { max-width: none; }
+    .links-waitlist .keycap--submit { width: 100%; }
+    .links-footer { padding-bottom: calc(4.25rem + var(--safe-bottom)); }
+}
+
+@media (max-width: 700px) {
+    .folder-grid > li {
+        width: calc((100% - var(--folder-gap)) / 2);
+    }
+    .links-grid-note { margin-bottom: 1rem; }
+    .folder-art { margin-bottom: .6rem; }
+    .folder-label { font-size: 1rem; }
+}
+
+/* iPhone / Android small screens */
+@media (max-width: 480px) {
+    .links-body .nav-container { gap: .75rem; }
+    .links-body .logo-text { font-size: 1.4rem; }
+    .links-body .logo-mark { width: 24px; height: 24px; }
+}
+
+@media (max-width: 380px) {
+    .folder-grid { --folder-gap: .9rem; }
+    .folder-label { font-size: .92rem; }
+}
+
+@media (max-width: 360px) {
+    .links-waitlist h1 { font-size: 1.75rem; }
+    .folder-grid { --folder-gap: .8rem; }
+    .folder-label { font-size: .9rem; }
+}
