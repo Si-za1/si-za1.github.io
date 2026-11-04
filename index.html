@@ -11,6 +11,13 @@
     <meta name="theme-color" content="#F7F1E4">
     <meta name="p:domain_verify" content="2ba873f0f84cdc18884524896293f8e1">
     <script>
+        // Keep the address bar clean when arriving through /index.html
+        if (location.pathname.endsWith('/index.html')) {
+            var cleanPath = location.pathname.replace(/index\.html$/, '') || '/';
+            history.replaceState(null, '', cleanPath + location.search + location.hash);
+        }
+    </script>
+    <script>
         // Apply a saved theme before first paint to avoid a flash of light mode
         try {
             if (localStorage.getItem('theme') === 'dark') {
