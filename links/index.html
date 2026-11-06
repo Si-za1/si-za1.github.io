@@ -30,10 +30,10 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
 
-    <!-- Fonts: the same three used across the main site -->
+    <!-- Fonts: the main site's three, plus Caveat for the folder labels -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Chewy&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="../styles.css">
@@ -43,6 +43,37 @@
 <body class="links-body">
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Official brand marks used on the folder prints -->
+    <svg class="logo-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+        <defs>
+            <linearGradient id="ig-gradient" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#FEDA75"/>
+                <stop offset=".28" stop-color="#FA7E1E"/>
+                <stop offset=".55" stop-color="#D62976"/>
+                <stop offset=".78" stop-color="#962FBF"/>
+                <stop offset="1" stop-color="#4F5BD5"/>
+            </linearGradient>
+        </defs>
+        <symbol id="brand-youtube" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </symbol>
+        <symbol id="brand-instagram" viewBox="0 0 24 24">
+            <path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/>
+        </symbol>
+        <symbol id="brand-substack" viewBox="0 0 24 24">
+            <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+        </symbol>
+        <symbol id="brand-buymeacoffee" viewBox="0 0 24 24">
+            <path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 00-.626-.194c-1-.263-2.05-.36-3.077-.416a25.834 25.834 0 00-3.7.062c-.915.083-1.88.184-2.75.5-.318.116-.646.256-.888.501-.297.302-.393.77-.177 1.146.154.267.415.456.692.58.36.162.737.284 1.123.366 1.075.238 2.189.331 3.287.37 1.218.05 2.437.01 3.65-.118.299-.033.598-.073.896-.119.352-.054.578-.513.474-.834-.124-.383-.457-.531-.834-.473-.466.074-.96.108-1.382.146-1.177.08-2.358.082-3.536.006a22.228 22.228 0 01-1.157-.107c-.086-.01-.18-.025-.258-.036-.243-.036-.484-.08-.724-.13-.111-.027-.111-.185 0-.212h.005c.277-.06.557-.108.838-.147h.002c.131-.009.263-.032.394-.048a25.076 25.076 0 013.426-.12c.674.019 1.347.067 2.017.144l.228.031c.267.04.533.088.798.145.392.085.895.113 1.07.542.055.137.08.288.111.431l.319 1.484a.237.237 0 01-.199.284h-.003c-.037.006-.075.01-.112.015a36.704 36.704 0 01-4.743.295 37.059 37.059 0 01-4.699-.304c-.14-.017-.293-.042-.417-.06-.326-.048-.649-.108-.973-.161-.393-.065-.768-.032-1.123.161-.29.16-.527.404-.675.701-.154.316-.199.66-.267 1-.069.34-.176.707-.135 1.056.087.753.613 1.365 1.37 1.502a39.69 39.69 0 0011.343.376.483.483 0 01.535.53l-.071.697-1.018 9.907c-.041.41-.047.832-.125 1.237-.122.637-.553 1.028-1.182 1.171-.577.131-1.165.2-1.756.205-.656.004-1.31-.025-1.966-.022-.699.004-1.556-.06-2.095-.58-.475-.458-.54-1.174-.605-1.793l-.731-7.013-.322-3.094c-.037-.351-.286-.695-.678-.678-.336.015-.718.3-.678.679l.228 2.185.949 9.112c.147 1.344 1.174 2.068 2.446 2.272.742.12 1.503.144 2.257.156.966.016 1.942.053 2.892-.122 1.408-.258 2.465-1.198 2.616-2.657.34-3.332.683-6.663 1.024-9.995l.215-2.087a.484.484 0 01.39-.426c.402-.078.787-.212 1.074-.518.455-.488.546-1.124.385-1.766zm-1.478.772c-.145.137-.363.201-.578.233-2.416.359-4.866.54-7.308.46-1.748-.06-3.477-.254-5.207-.498-.17-.024-.353-.055-.47-.18-.22-.236-.111-.71-.054-.995.052-.26.152-.609.463-.646.484-.057 1.046.148 1.526.22.577.088 1.156.159 1.737.212 2.48.226 5.002.19 7.472-.14.45-.06.899-.13 1.345-.21.399-.072.84-.206 1.08.206.166.281.188.657.162.974a.544.544 0 01-.169.364zm-6.159 3.9c-.862.37-1.84.788-3.109.788a5.884 5.884 0 01-1.569-.217l.877 9.004c.065.78.717 1.38 1.5 1.38 0 0 1.243.065 1.658.065.447 0 1.786-.065 1.786-.065.783 0 1.434-.6 1.499-1.38l.94-9.95a3.996 3.996 0 00-1.322-.238c-.826 0-1.491.284-2.26.613z"/>
+        </symbol>
+        <symbol id="brand-gift" viewBox="0 0 24 24">
+            <path d="M4.75 10.5h14.5V20a1.25 1.25 0 0 1-1.25 1.25H6A1.25 1.25 0 0 1 4.75 20v-9.5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M3.25 6.5h17.5v4H3.25z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12 6.5v14.75" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M12 6.5C10.6 3.2 7 2.4 5.9 4.3c-1.1 1.9 1.3 3.3 6.1 2.2Zm0 0c1.4-3.3 5-4.1 6.1-2.2 1.1 1.9-1.3 3.3-6.1 2.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </symbol>
+    </svg>
 
     <!-- Navigation: the page styles reduce this to the logo + theme toggle -->
     <nav class="navbar" id="navbar" aria-label="Main navigation">
@@ -133,13 +164,21 @@
                         <li>
                             <a class="folder-card folder-card--sage" href="https://quietreads.space/" target="_blank" rel="noopener">
                                 <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-photo folder-photo--back">
-                                        <img src="../assets/images/links/quiet-reads-2.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
+                                    <span class="folder-tab">read</span>
+                                    <span class="folder-print folder-print--brand">
+                                        <span class="brand-card">
+                                            <span class="brand-mark brand-mark--image">
+                                                <img src="../assets/icons/quiet-reads.png" alt="" width="256" height="256" loading="lazy" decoding="async">
+                                            </span>
+                                            <span class="brand-rule"></span>
+                                            <span class="brand-name">Quiet Reads</span>
+                                        </span>
+                                        <span class="print-tape"></span>
                                     </span>
-                                    <span class="folder-photo folder-photo--front">
+                                    <span class="folder-print folder-print--shot">
                                         <img src="../assets/images/links/quiet-reads.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-front"></span>
+                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
                                 <span class="folder-label">Quiet Reads</span>
                             </a>
@@ -148,13 +187,21 @@
                         <li>
                             <a class="folder-card folder-card--pink" href="https://www.youtube.com/@thedata_aiengineer" target="_blank" rel="noopener">
                                 <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-photo folder-photo--back">
+                                    <span class="folder-tab">watch</span>
+                                    <span class="folder-print folder-print--brand">
+                                        <span class="brand-card">
+                                            <span class="brand-mark brand-mark--youtube">
+                                                <svg viewBox="0 0 24 24"><use href="#brand-youtube"></use></svg>
+                                            </span>
+                                            <span class="brand-rule"></span>
+                                            <span class="brand-name">YouTube</span>
+                                        </span>
+                                        <span class="print-tape"></span>
+                                    </span>
+                                    <span class="folder-print folder-print--shot">
                                         <img src="../assets/images/links/youtube-2.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-photo folder-photo--front">
-                                        <img src="../assets/images/links/youtube.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="folder-front"></span>
+                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
                                 <span class="folder-label">YouTube</span>
                             </a>
@@ -163,13 +210,21 @@
                         <li>
                             <a class="folder-card folder-card--peach" href="https://substack.com/@thedataaiengineer" target="_blank" rel="noopener">
                                 <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-photo folder-photo--back">
-                                        <img src="../assets/images/links/substack-2.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
+                                    <span class="folder-tab">notes</span>
+                                    <span class="folder-print folder-print--brand">
+                                        <span class="brand-card">
+                                            <span class="brand-mark brand-mark--substack">
+                                                <svg viewBox="0 0 24 24"><use href="#brand-substack"></use></svg>
+                                            </span>
+                                            <span class="brand-rule"></span>
+                                            <span class="brand-name">Substack</span>
+                                        </span>
+                                        <span class="print-tape"></span>
                                     </span>
-                                    <span class="folder-photo folder-photo--front">
+                                    <span class="folder-print folder-print--shot">
                                         <img src="../assets/images/links/substack.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-front"></span>
+                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
                                 <span class="folder-label">Substack</span>
                             </a>
@@ -178,13 +233,21 @@
                         <li>
                             <a class="folder-card folder-card--lilac" href="https://www.instagram.com/meandmycoffeetales?dlrf=YWFlYmM1Z3hjM2Ji&amp;utm_source=qr" target="_blank" rel="noopener">
                                 <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-photo folder-photo--back">
-                                        <img src="../assets/images/links/instagram-2.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
+                                    <span class="folder-tab">follow</span>
+                                    <span class="folder-print folder-print--brand">
+                                        <span class="brand-card">
+                                            <span class="brand-mark brand-mark--instagram">
+                                                <svg viewBox="0 0 24 24"><use href="#brand-instagram"></use></svg>
+                                            </span>
+                                            <span class="brand-rule"></span>
+                                            <span class="brand-name">Instagram</span>
+                                        </span>
+                                        <span class="print-tape"></span>
                                     </span>
-                                    <span class="folder-photo folder-photo--front">
+                                    <span class="folder-print folder-print--shot">
                                         <img src="../assets/images/links/instagram.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-front"></span>
+                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
                                 <span class="folder-label">Instagram</span>
                             </a>
@@ -193,13 +256,21 @@
                         <li>
                             <a class="folder-card folder-card--sky" href="https://www.instagram.com/hey.sizaa/" target="_blank" rel="noopener">
                                 <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-photo folder-photo--back">
-                                        <img src="../assets/images/links/email-2.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
+                                    <span class="folder-tab">follow</span>
+                                    <span class="folder-print folder-print--brand">
+                                        <span class="brand-card">
+                                            <span class="brand-mark brand-mark--instagram">
+                                                <svg viewBox="0 0 24 24"><use href="#brand-instagram"></use></svg>
+                                            </span>
+                                            <span class="brand-rule"></span>
+                                            <span class="brand-name">@hey.sizaa</span>
+                                        </span>
+                                        <span class="print-tape"></span>
                                     </span>
-                                    <span class="folder-photo folder-photo--front">
+                                    <span class="folder-print folder-print--shot">
                                         <img src="../assets/images/links/email.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-front"></span>
+                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
                                 <span class="folder-label">Instagram · @hey.sizaa</span>
                             </a>
@@ -208,45 +279,69 @@
                         <li>
                             <a class="folder-card folder-card--gold" href="https://www.buymeacoffee.com/FlGZgfnIYV" target="_blank" rel="noopener">
                                 <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-photo folder-photo--back">
-                                        <img src="../assets/images/links/buy-me-a-coffee-2.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
+                                    <span class="folder-tab">coffee</span>
+                                    <span class="folder-print folder-print--brand">
+                                        <span class="brand-card">
+                                            <span class="brand-mark brand-mark--bmc">
+                                                <svg viewBox="0 0 24 24"><use href="#brand-buymeacoffee"></use></svg>
+                                            </span>
+                                            <span class="brand-rule"></span>
+                                            <span class="brand-name">Buy Me a Coffee</span>
+                                        </span>
+                                        <span class="print-tape"></span>
                                     </span>
-                                    <span class="folder-photo folder-photo--front">
+                                    <span class="folder-print folder-print--shot">
                                         <img src="../assets/images/links/buy-me-a-coffee.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-front"></span>
+                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">Buy me a coffee</span>
+                                <span class="folder-label">Buy Me a Coffee</span>
                             </a>
                         </li>
 
                         <li>
                             <a class="folder-card folder-card--peach" href="https://buymemomo.com/meandmycoffeetales" target="_blank" rel="noopener">
                                 <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-photo folder-photo--back">
-                                        <img src="../assets/images/links/buy-me-momo-2.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
+                                    <span class="folder-tab">momo</span>
+                                    <span class="folder-print folder-print--brand">
+                                        <span class="brand-card">
+                                            <span class="brand-mark brand-mark--image">
+                                                <img src="../assets/icons/buy-me-momo.png" alt="" width="256" height="256" loading="lazy" decoding="async">
+                                            </span>
+                                            <span class="brand-rule"></span>
+                                            <span class="brand-name">Buy Me Momo</span>
+                                        </span>
+                                        <span class="print-tape"></span>
                                     </span>
-                                    <span class="folder-photo folder-photo--front">
+                                    <span class="folder-print folder-print--shot">
                                         <img src="../assets/images/links/buy-me-momo.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-front"></span>
+                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">Buy me momo</span>
+                                <span class="folder-label">Buy Me Momo</span>
                             </a>
                         </li>
 
                         <li>
                             <a class="folder-card folder-card--pink" href="https://buymeacoffee.com/flgzgfniyv/2026-wishlist" target="_blank" rel="noopener">
                                 <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-photo folder-photo--back">
-                                        <img src="../assets/images/links/wishlist-2.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
+                                    <span class="folder-tab">wish</span>
+                                    <span class="folder-print folder-print--brand">
+                                        <span class="brand-card">
+                                            <span class="brand-mark brand-mark--gift">
+                                                <svg viewBox="0 0 24 24"><use href="#brand-gift"></use></svg>
+                                            </span>
+                                            <span class="brand-rule"></span>
+                                            <span class="brand-name">2026 Wishlist</span>
+                                        </span>
+                                        <span class="print-tape"></span>
                                     </span>
-                                    <span class="folder-photo folder-photo--front">
+                                    <span class="folder-print folder-print--shot">
                                         <img src="../assets/images/links/wishlist.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-front"></span>
+                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">2026 wishlist</span>
+                                <span class="folder-label">2026 Wishlist</span>
                             </a>
                         </li>
                     </ul>
