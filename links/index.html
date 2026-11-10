@@ -30,7 +30,7 @@
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
 
-    <!-- Fonts: the main site's three, plus Caveat for the folder labels -->
+    <!-- Fonts: the main site's three, plus Caveat for the handwritten card titles -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Chewy&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -44,7 +44,7 @@
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Official brand marks used on the folder prints -->
+    <!-- Official brand marks and little category glyphs for the cards -->
     <svg class="logo-sprite" aria-hidden="true" focusable="false" width="0" height="0">
         <defs>
             <linearGradient id="ig-gradient" x1="0" y1="1" x2="1" y2="0">
@@ -72,6 +72,35 @@
             <path d="M3.25 6.5h17.5v4H3.25z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
             <path d="M12 6.5v14.75" fill="none" stroke="currentColor" stroke-width="1.5"/>
             <path d="M12 6.5C10.6 3.2 7 2.4 5.9 4.3c-1.1 1.9 1.3 3.3 6.1 2.2Zm0 0c1.4-3.3 5-4.1 6.1-2.2 1.1 1.9-1.3 3.3-6.1 2.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </symbol>
+
+        <!-- Small line glyphs for the card footers -->
+        <symbol id="tag-read" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 6.6C9.9 5.2 7.1 4.8 4.2 5.6v13c2.9-.8 5.7-.4 7.8 1 2.1-1.4 4.9-1.8 7.8-1v-13c-2.9-.8-5.7-.4-7.8 1Z"/>
+            <path d="M12 6.6v13"/>
+        </symbol>
+        <symbol id="tag-watch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3.2" y="5.2" width="17.6" height="13.6" rx="4"/>
+            <path d="M10 9.4l5 2.6-5 2.6V9.4Z" fill="currentColor" stroke="none"/>
+        </symbol>
+        <symbol id="tag-write" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.2 19.8l1-4.6L15.7 4.7l3.6 3.6L8.8 18.8l-4.6 1Z"/>
+            <path d="M13.3 7.1l3.6 3.6"/>
+        </symbol>
+        <symbol id="tag-follow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3.4" y="6.6" width="17.2" height="13" rx="4"/>
+            <circle cx="12" cy="13.1" r="3.4"/>
+            <path d="M8.4 6.6l1.4-2.1h4.4l1.4 2.1"/>
+        </symbol>
+        <symbol id="tag-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.6 9.6h11v5.6a4 4 0 0 1-4 4h-3a4 4 0 0 1-4-4V9.6Z"/>
+            <path d="M15.6 11.1h1.7a2.6 2.6 0 0 1 0 5.2h-1.7"/>
+            <path d="M7.7 6.7c.8-.9.8-1.9 0-2.8M11.1 6.7c.8-.9.8-1.9 0-2.8"/>
+        </symbol>
+        <symbol id="tag-momo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 12.4c0-4.1 3.4-7.4 7.5-7.4s7.5 3.3 7.5 7.4c-2.3 2.7-4.8 4-7.5 4s-5.2-1.3-7.5-4Z"/>
+            <path d="M7.4 9.4c1.5 1.1 3 1.6 4.6 1.6s3.1-.5 4.6-1.6"/>
+            <path d="M9.2 6.4c.8 1 1.7 1.6 2.8 1.6s2-.6 2.8-1.6"/>
         </symbol>
     </svg>
 
@@ -160,188 +189,188 @@
 
                     <p class="links-grid-note fade-in-up">pick a door</p>
 
-                    <ul class="folder-grid fade-in-up">
+                    <ul class="link-grid fade-in-up">
                         <li>
-                            <a class="folder-card folder-card--sage" href="https://quietreads.space/" target="_blank" rel="noopener">
-                                <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-tab">read</span>
-                                    <span class="folder-print folder-print--brand">
-                                        <span class="brand-card">
-                                            <span class="brand-mark brand-mark--image">
-                                                <img src="../assets/icons/quiet-reads.png" alt="" width="256" height="256" loading="lazy" decoding="async">
-                                            </span>
-                                            <span class="brand-rule"></span>
-                                            <span class="brand-name">Quiet Reads</span>
-                                        </span>
-                                        <span class="print-tape"></span>
+                            <a class="link-card link-card--sage" href="https://quietreads.space/" target="_blank" rel="noopener">
+                                <span class="link-card-art" aria-hidden="true">
+                                    <span class="link-card-mark link-card-mark--image">
+                                        <img src="../assets/icons/quiet-reads.png" alt="" width="256" height="256" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-print folder-print--shot">
-                                        <img src="../assets/images/links/quiet-reads.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">Quiet Reads</span>
+                                <span class="link-card-body">
+                                    <span class="link-card-kind">the book app</span>
+                                    <span class="link-card-title">Quiet Reads</span>
+                                    <span class="link-card-handle">quietreads.space</span>
+                                    <span class="link-card-bio">A gentle home for the books you love: shelves, notes, and quiet reading hours.</span>
+                                    <span class="link-card-foot">
+                                        <span class="link-card-tag">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#tag-read"></use></svg>
+                                            Reading
+                                        </span>
+                                        <span class="link-card-arrow" aria-hidden="true">↗</span>
+                                    </span>
+                                </span>
                             </a>
                         </li>
 
                         <li>
-                            <a class="folder-card folder-card--pink" href="https://www.youtube.com/@thedata_aiengineer" target="_blank" rel="noopener">
-                                <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-tab">watch</span>
-                                    <span class="folder-print folder-print--brand">
-                                        <span class="brand-card">
-                                            <span class="brand-mark brand-mark--youtube">
-                                                <svg viewBox="0 0 24 24"><use href="#brand-youtube"></use></svg>
-                                            </span>
-                                            <span class="brand-rule"></span>
-                                            <span class="brand-name">YouTube</span>
-                                        </span>
-                                        <span class="print-tape"></span>
+                            <a class="link-card link-card--lilac" href="https://www.youtube.com/@thedata_aiengineer" target="_blank" rel="noopener">
+                                <span class="link-card-art" aria-hidden="true">
+                                    <span class="link-card-mark link-card-mark--youtube">
+                                        <svg viewBox="0 0 24 24"><use href="#brand-youtube"></use></svg>
                                     </span>
-                                    <span class="folder-print folder-print--shot">
-                                        <img src="../assets/images/links/youtube-2.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">YouTube</span>
+                                <span class="link-card-body">
+                                    <span class="link-card-kind">the youtube channel</span>
+                                    <span class="link-card-title">The Data &amp; AI Engineer</span>
+                                    <span class="link-card-handle">@thedata_aiengineer</span>
+                                    <span class="link-card-bio">Data, AI, and honest career notes. One calm video at a time.</span>
+                                    <span class="link-card-foot">
+                                        <span class="link-card-tag">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#tag-watch"></use></svg>
+                                            Watch
+                                        </span>
+                                        <span class="link-card-arrow" aria-hidden="true">↗</span>
+                                    </span>
+                                </span>
                             </a>
                         </li>
 
                         <li>
-                            <a class="folder-card folder-card--peach" href="https://substack.com/@thedataaiengineer" target="_blank" rel="noopener">
-                                <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-tab">notes</span>
-                                    <span class="folder-print folder-print--brand">
-                                        <span class="brand-card">
-                                            <span class="brand-mark brand-mark--substack">
-                                                <svg viewBox="0 0 24 24"><use href="#brand-substack"></use></svg>
-                                            </span>
-                                            <span class="brand-rule"></span>
-                                            <span class="brand-name">Substack</span>
-                                        </span>
-                                        <span class="print-tape"></span>
+                            <a class="link-card link-card--pink" href="https://substack.com/@thedataaiengineer" target="_blank" rel="noopener">
+                                <span class="link-card-art" aria-hidden="true">
+                                    <span class="link-card-mark link-card-mark--substack">
+                                        <svg viewBox="0 0 24 24"><use href="#brand-substack"></use></svg>
                                     </span>
-                                    <span class="folder-print folder-print--shot">
-                                        <img src="../assets/images/links/substack.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">Substack</span>
+                                <span class="link-card-body">
+                                    <span class="link-card-kind">the newsletter</span>
+                                    <span class="link-card-title">Notes &amp; Letters</span>
+                                    <span class="link-card-handle">@thedataaiengineer</span>
+                                    <span class="link-card-bio">Thoughts on tech, creativity, and slow living, written like letters.</span>
+                                    <span class="link-card-foot">
+                                        <span class="link-card-tag">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#tag-write"></use></svg>
+                                            Letters
+                                        </span>
+                                        <span class="link-card-arrow" aria-hidden="true">↗</span>
+                                    </span>
+                                </span>
                             </a>
                         </li>
 
                         <li>
-                            <a class="folder-card folder-card--lilac" href="https://www.instagram.com/meandmycoffeetales?dlrf=YWFlYmM1Z3hjM2Ji&amp;utm_source=qr" target="_blank" rel="noopener">
-                                <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-tab">follow</span>
-                                    <span class="folder-print folder-print--brand">
-                                        <span class="brand-card">
-                                            <span class="brand-mark brand-mark--instagram">
-                                                <svg viewBox="0 0 24 24"><use href="#brand-instagram"></use></svg>
-                                            </span>
-                                            <span class="brand-rule"></span>
-                                            <span class="brand-name">Instagram</span>
-                                        </span>
-                                        <span class="print-tape"></span>
+                            <a class="link-card link-card--peach" href="https://www.instagram.com/meandmycoffeetales?dlrf=YWFlYmM1Z3hjM2Ji&amp;utm_source=qr" target="_blank" rel="noopener">
+                                <span class="link-card-art" aria-hidden="true">
+                                    <span class="link-card-mark link-card-mark--instagram">
+                                        <svg viewBox="0 0 24 24"><use href="#brand-instagram"></use></svg>
                                     </span>
-                                    <span class="folder-print folder-print--shot">
-                                        <img src="../assets/images/links/instagram.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">Instagram</span>
+                                <span class="link-card-body">
+                                    <span class="link-card-kind">everyday corners</span>
+                                    <span class="link-card-title">Me &amp; My Coffee Tales</span>
+                                    <span class="link-card-handle">@meandmycoffeetales</span>
+                                    <span class="link-card-bio">Coffee rituals, books, and slow days. Life between sips.</span>
+                                    <span class="link-card-foot">
+                                        <span class="link-card-tag">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#tag-follow"></use></svg>
+                                            Follow
+                                        </span>
+                                        <span class="link-card-arrow" aria-hidden="true">↗</span>
+                                    </span>
+                                </span>
                             </a>
                         </li>
 
                         <li>
-                            <a class="folder-card folder-card--sky" href="https://www.instagram.com/hey.sizaa/" target="_blank" rel="noopener">
-                                <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-tab">follow</span>
-                                    <span class="folder-print folder-print--brand">
-                                        <span class="brand-card">
-                                            <span class="brand-mark brand-mark--instagram">
-                                                <svg viewBox="0 0 24 24"><use href="#brand-instagram"></use></svg>
-                                            </span>
-                                            <span class="brand-rule"></span>
-                                            <span class="brand-name">@hey.sizaa</span>
-                                        </span>
-                                        <span class="print-tape"></span>
+                            <a class="link-card link-card--sky" href="https://www.instagram.com/hey.sizaa/" target="_blank" rel="noopener">
+                                <span class="link-card-art" aria-hidden="true">
+                                    <span class="link-card-mark link-card-mark--instagram">
+                                        <svg viewBox="0 0 24 24"><use href="#brand-instagram"></use></svg>
                                     </span>
-                                    <span class="folder-print folder-print--shot">
-                                        <img src="../assets/images/links/email.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">Instagram · @hey.sizaa</span>
+                                <span class="link-card-body">
+                                    <span class="link-card-kind">a little more personal</span>
+                                    <span class="link-card-title">Hey, Sizaa</span>
+                                    <span class="link-card-handle">@hey.sizaa</span>
+                                    <span class="link-card-bio">Little moments, books, and the occasional coffee cup.</span>
+                                    <span class="link-card-foot">
+                                        <span class="link-card-tag">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#tag-follow"></use></svg>
+                                            Follow
+                                        </span>
+                                        <span class="link-card-arrow" aria-hidden="true">↗</span>
+                                    </span>
+                                </span>
                             </a>
                         </li>
 
                         <li>
-                            <a class="folder-card folder-card--gold" href="https://www.buymeacoffee.com/FlGZgfnIYV" target="_blank" rel="noopener">
-                                <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-tab">coffee</span>
-                                    <span class="folder-print folder-print--brand">
-                                        <span class="brand-card">
-                                            <span class="brand-mark brand-mark--bmc">
-                                                <svg viewBox="0 0 24 24"><use href="#brand-buymeacoffee"></use></svg>
-                                            </span>
-                                            <span class="brand-rule"></span>
-                                            <span class="brand-name">Buy Me a Coffee</span>
-                                        </span>
-                                        <span class="print-tape"></span>
+                            <a class="link-card link-card--terra" href="https://www.buymeacoffee.com/FlGZgfnIYV" target="_blank" rel="noopener">
+                                <span class="link-card-art" aria-hidden="true">
+                                    <span class="link-card-mark link-card-mark--bmc">
+                                        <svg viewBox="0 0 24 24"><use href="#brand-buymeacoffee"></use></svg>
                                     </span>
-                                    <span class="folder-print folder-print--shot">
-                                        <img src="../assets/images/links/buy-me-a-coffee.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">Buy Me a Coffee</span>
+                                <span class="link-card-body">
+                                    <span class="link-card-kind">a small thank you</span>
+                                    <span class="link-card-title">Buy Me a Coffee</span>
+                                    <span class="link-card-handle">buymeacoffee.com</span>
+                                    <span class="link-card-bio">If these corners made your day warmer, you can leave a coffee here.</span>
+                                    <span class="link-card-foot">
+                                        <span class="link-card-tag">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#tag-coffee"></use></svg>
+                                            Support
+                                        </span>
+                                        <span class="link-card-arrow" aria-hidden="true">↗</span>
+                                    </span>
+                                </span>
                             </a>
                         </li>
 
                         <li>
-                            <a class="folder-card folder-card--peach" href="https://buymemomo.com/meandmycoffeetales" target="_blank" rel="noopener">
-                                <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-tab">momo</span>
-                                    <span class="folder-print folder-print--brand">
-                                        <span class="brand-card">
-                                            <span class="brand-mark brand-mark--image">
-                                                <img src="../assets/icons/buy-me-momo.png" alt="" width="256" height="256" loading="lazy" decoding="async">
-                                            </span>
-                                            <span class="brand-rule"></span>
-                                            <span class="brand-name">Buy Me Momo</span>
-                                        </span>
-                                        <span class="print-tape"></span>
+                            <a class="link-card link-card--gold" href="https://buymemomo.com/meandmycoffeetales" target="_blank" rel="noopener">
+                                <span class="link-card-art" aria-hidden="true">
+                                    <span class="link-card-mark link-card-mark--image">
+                                        <img src="../assets/icons/buy-me-momo.png" alt="" width="256" height="256" loading="lazy" decoding="async">
                                     </span>
-                                    <span class="folder-print folder-print--shot">
-                                        <img src="../assets/images/links/buy-me-momo.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">Buy Me Momo</span>
+                                <span class="link-card-body">
+                                    <span class="link-card-kind">a nepali treat</span>
+                                    <span class="link-card-title">Buy Me Momo</span>
+                                    <span class="link-card-handle">buymemomo.com</span>
+                                    <span class="link-card-bio">Steam, spice, and a little love. A momo to say thank you.</span>
+                                    <span class="link-card-foot">
+                                        <span class="link-card-tag">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#tag-momo"></use></svg>
+                                            Support
+                                        </span>
+                                        <span class="link-card-arrow" aria-hidden="true">↗</span>
+                                    </span>
+                                </span>
                             </a>
                         </li>
 
                         <li>
-                            <a class="folder-card folder-card--pink" href="https://buymeacoffee.com/flgzgfniyv/2026-wishlist" target="_blank" rel="noopener">
-                                <span class="folder-art" aria-hidden="true">
-                                    <span class="folder-tab">wish</span>
-                                    <span class="folder-print folder-print--brand">
-                                        <span class="brand-card">
-                                            <span class="brand-mark brand-mark--gift">
-                                                <svg viewBox="0 0 24 24"><use href="#brand-gift"></use></svg>
-                                            </span>
-                                            <span class="brand-rule"></span>
-                                            <span class="brand-name">2026 Wishlist</span>
-                                        </span>
-                                        <span class="print-tape"></span>
+                            <a class="link-card link-card--sage" href="https://buymeacoffee.com/flgzgfniyv/2026-wishlist" target="_blank" rel="noopener">
+                                <span class="link-card-art" aria-hidden="true">
+                                    <span class="link-card-mark link-card-mark--gift">
+                                        <svg viewBox="0 0 24 24"><use href="#brand-gift"></use></svg>
                                     </span>
-                                    <span class="folder-print folder-print--shot">
-                                        <img src="../assets/images/links/wishlist.jpg" alt="" width="400" height="400" loading="lazy" decoding="async">
-                                    </span>
-                                    <span class="folder-pocket"><span class="pocket-stamp">open ↗</span></span>
                                 </span>
-                                <span class="folder-label">2026 Wishlist</span>
+                                <span class="link-card-body">
+                                    <span class="link-card-kind">a little list</span>
+                                    <span class="link-card-title">2026 Wishlist</span>
+                                    <span class="link-card-handle">buymeacoffee.com</span>
+                                    <span class="link-card-bio">Small things that would make this year a little brighter.</span>
+                                    <span class="link-card-foot">
+                                        <span class="link-card-tag">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#brand-gift"></use></svg>
+                                            Gift
+                                        </span>
+                                        <span class="link-card-arrow" aria-hidden="true">↗</span>
+                                    </span>
+                                </span>
                             </a>
                         </li>
                     </ul>
